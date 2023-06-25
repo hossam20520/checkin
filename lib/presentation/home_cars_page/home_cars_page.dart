@@ -12,9 +12,11 @@ class HomeCarsPage extends StatelessWidget {
   HomeCarsController controller =
       Get.put(HomeCarsController(HomeCarsModel().obs));
 
+  
   @override
   Widget build(BuildContext context) {
     // controller.fetchCarsItems();
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
