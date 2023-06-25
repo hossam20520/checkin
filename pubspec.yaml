@@ -43,7 +43,7 @@ dependencies:
   pin_input_text_field: 4.1.0
   intl: ^0.17.0
   fluttertoast: ^8.2.1
-  flutter_localization: ^0.1.10
+  flutter_localization: ^0.1.12
   carousel_slider: ^4.2.1
   url_launcher: ^6.1.11
   google_maps_flutter: ^2.3.0
