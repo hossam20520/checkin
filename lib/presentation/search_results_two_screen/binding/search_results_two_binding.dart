@@ -1,0 +1,9 @@
+import '../controller/search_results_two_controller.dart';
+import 'package:get/get.dart';
+
+class SearchResultsTwoBinding extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => SearchResultsTwoController());
+  }
+}
