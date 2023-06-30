@@ -208,6 +208,7 @@ class HotelScreen extends GetWidget<HotelController> {
 
                             )
                           ])),
+
                       Expanded(
                           child: SingleChildScrollView(
                               padding: getPadding(top: 16),

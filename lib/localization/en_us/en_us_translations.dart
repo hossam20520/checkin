@@ -280,7 +280,7 @@ final Map<String, String> enUs = {
   "lbl_900_omr": "900 OMR",
   "lbl_filter": "Filter",
   "msg_enter_the_4_digit2":
-      "Enter the 4-digit that we have sent\nvia the phone number\n",
+      "Enter the 6-digit that we have sent\nvia the phone number\n",
   "msg_fri_21_jul_10": "Fri, 21 Jul - 10 : 30 AM",
   "lbl_lowest_price": "Lowest price",
   "lbl_confirm": "Confirm",

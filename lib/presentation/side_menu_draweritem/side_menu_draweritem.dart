@@ -15,6 +15,7 @@ class SideMenuDraweritem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String isLogged = Get.find<PrefUtils>().getIslogged();
     double screenWidth = MediaQuery.of(context).size.width;
     double drawerWidthPercentage = 0.8; // 50% of the screen width
     double drawerWidth = screenWidth * drawerWidthPercentage;
@@ -23,7 +24,7 @@ class SideMenuDraweritem extends StatelessWidget {
     final email = Get.find<PrefUtils>().getEmail();
     final isProvider = Get.find<PrefUtils>().getIsProvider();
     // final isProvider =  Get.find<LogInController>().logInModelObj.value.isProvider;
-    print("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
 print(isProvider);
     return Drawer(
       width: drawerWidth,
@@ -146,7 +147,7 @@ print(isProvider);
             ),
             Container(
               margin: getMargin(
-                top: 86,
+                top: 10,
               ),
               padding: getPadding(
                 left: 24,
@@ -539,7 +540,8 @@ print(isProvider);
                       left: 17,
                     ),
                     child: Text(
-                      "lbl_log_out".tr,
+                      isLogged == "yes" ?
+                      "lbl_log_out".tr : "Log In",
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: AppStyle.txtMontserratRegular154,

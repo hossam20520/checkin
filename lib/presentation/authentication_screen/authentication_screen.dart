@@ -1,3 +1,4 @@
+import '../forgot_password_screen/controller/forgot_password_controller.dart';
 import 'controller/authentication_controller.dart';
 import 'package:checkin/core/app_export.dart';
 import 'package:checkin/widgets/app_bar/appbar_image.dart';
@@ -11,8 +12,8 @@ import 'package:pin_code_fields/pin_code_fields.dart';
 class AuthenticationScreen extends GetWidget<AuthenticationController> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+     String phone = Get.find<ForgotPasswordController>().forgotPasswordModelObj.value.phone.toString();
+    return Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
@@ -43,6 +44,7 @@ class AuthenticationScreen extends GetWidget<AuthenticationController> {
                           margin: getMargin(left: 34, top: 16, right: 32),
                           child: RichText(
                               text: TextSpan(children: [
+
                                 TextSpan(
                                     text: "msg_enter_the_4_digit2".tr,
                                     style: TextStyle(
@@ -50,8 +52,10 @@ class AuthenticationScreen extends GetWidget<AuthenticationController> {
                                         fontSize: getFontSize(16),
                                         fontFamily: 'Montserrat',
                                         fontWeight: FontWeight.w300)),
+
+
                                 TextSpan(
-                                    text: "msg_62_813_8172_5977".tr,
+                                    text:  phone.toString(),
                                     style: TextStyle(
                                         color: ColorConstant.fromHex("#f29f05"),
                                         fontSize: getFontSize(16),
@@ -60,11 +64,11 @@ class AuthenticationScreen extends GetWidget<AuthenticationController> {
                               ]),
                               textAlign: TextAlign.center)),
                       Padding(
-                          padding: getPadding(left: 51, top: 34, right: 49),
+                          padding: getPadding(  top: 34  ),
                           child: Obx(() => PinCodeTextField(
                               appContext: context,
                               controller: controller.otpController.value,
-                              length: 4,
+                              length: 6,
                               obscureText: false,
                               obscuringCharacter: '*',
                               keyboardType: TextInputType.number,
@@ -97,7 +101,8 @@ class AuthenticationScreen extends GetWidget<AuthenticationController> {
                           height: getVerticalSize(62),
                           text: "lbl_continue".tr,
                           onTap: () {
-                            onTapContinue();
+                            controller.signInWithOTP();
+                            // onTapContinue();
                           }),
                       Padding(
                           padding: getPadding(top: 34, bottom: 19),
@@ -105,13 +110,15 @@ class AuthenticationScreen extends GetWidget<AuthenticationController> {
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtMontserratLight16))
-                    ]))));
+                    ])) );
   }
 
   onTapContinue() {
-    Get.toNamed(
-      AppRoutes.resetPasswordScreen,
-    );
+    // controller.otpController;
+
+    // Get.toNamed(
+    //   AppRoutes.resetPasswordScreen,
+    // );
   }
 
   onTapArrowleft5() {

@@ -52,6 +52,7 @@ class LogInScreen extends GetWidget<LogInController> {
                               textAlign: TextAlign.left,
                               style: AppStyle.txtDescription),
                           CustomTextFormField(
+
                               focusNode: FocusNode(),
                               controller: controller.mobilenumberController,
                               hintText: "lbl_mobile_number".tr,
@@ -203,28 +204,28 @@ class LogInScreen extends GetWidget<LogInController> {
                                       MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
-                                        padding: getPadding(top: 8, bottom: 10),
-                                        child: SizedBox(
-                                            width: getHorizontalSize(99),
-                                            child: Divider(
-                                                height: getVerticalSize(1),
-                                                thickness: getVerticalSize(1),
-                                                color:
-                                                    ColorConstant.black900))),
-                                    Text("lbl_or_log_in_with".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtMontserratLight16Black900),
-                                    Padding(
-                                        padding: getPadding(top: 8, bottom: 10),
-                                        child: SizedBox(
-                                            width: getHorizontalSize(99),
-                                            child: Divider(
-                                                height: getVerticalSize(1),
-                                                thickness: getVerticalSize(1),
-                                                color: ColorConstant.black900)))
+                                    // Padding(
+                                    //     padding: getPadding(top: 8, bottom: 10),
+                                    //     child: SizedBox(
+                                    //         width: getHorizontalSize(99),
+                                    //         child: Divider(
+                                    //             height: getVerticalSize(1),
+                                    //             thickness: getVerticalSize(1),
+                                    //             color:
+                                    //                 ColorConstant.black900))),
+                                    // Text("lbl_or_log_in_with".tr,
+                                    //     overflow: TextOverflow.ellipsis,
+                                    //     textAlign: TextAlign.left,
+                                    //     style: AppStyle
+                                    //         .txtMontserratLight16Black900),
+                                    // Padding(
+                                    //     padding: getPadding(top: 8, bottom: 10),
+                                    //     child: SizedBox(
+                                    //         width: getHorizontalSize(99),
+                                    //         child: Divider(
+                                    //             height: getVerticalSize(1),
+                                    //             thickness: getVerticalSize(1),
+                                    //             color: ColorConstant.black900)))
                                   ])),
                           Padding(
                               padding: getPadding(left: 1, top: 24),
@@ -232,51 +233,51 @@ class LogInScreen extends GetWidget<LogInController> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
 
-                                    Expanded(
-                                        child:  CustomButton(
-                                            height: getVerticalSize(55),
-                                            text: "lbl_google".tr,
-                                            margin: getMargin(right: 4),
-                                            variant:
-                                                ButtonVariant.OutlineIndigo300,
-                                            padding: ButtonPadding.PaddingT16,
-                                            fontStyle: ButtonFontStyle
-                                                .MontserratRegular18,
-                                            prefixWidget: Container(
-                                                margin: getMargin(right:0 , left: 8),
-                                                child: CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgBrands)),
-                                            onTap: () {
-                                              googleLogin();
-                                            })
+                                    // Expanded(
+                                    //     child:  CustomButton(
+                                    //         height: getVerticalSize(55),
+                                    //         text: "lbl_google".tr,
+                                    //         margin: getMargin(right: 4),
+                                    //         variant:
+                                    //             ButtonVariant.OutlineIndigo300,
+                                    //         padding: ButtonPadding.PaddingT16,
+                                    //         fontStyle: ButtonFontStyle
+                                    //             .MontserratRegular18,
+                                    //         prefixWidget: Container(
+                                    //             margin: getMargin(right:0 , left: 8),
+                                    //             child: CustomImageView(
+                                    //                 svgPath: ImageConstant
+                                    //                     .imgBrands)),
+                                    //         onTap: () {
+                                    //           googleLogin();
+                                    //         })
+                                    //
+                                    //
+                                    // ),
+                                    // SizedBox(width: 15,),
 
-
-                                    ),
-                                    SizedBox(width: 15,),
-
-                                    Expanded(
-                                        child:  CustomButton(
-                                            height: getVerticalSize(55),
-                                            text: "lbl_facebook".tr,
-                                            margin: getMargin(right: 4),
-                                            variant:
-                                            ButtonVariant.OutlineIndigo300,
-                                            padding: ButtonPadding.PaddingT16,
-                                            fontStyle: ButtonFontStyle
-                                                .MontserratRegular18,
-                                            prefixWidget: Container(
-                                                margin: getMargin(right:0 , left: 8),
-                                                child: CustomImageView(
-                                                    svgPath: ImageConstant
-                                                        .imgFacebook)),
-                                            onTap: () {
-                                               FacebookLoginFun();
-                                              // googleLogin();
-                                            })
-
-
-                                    ),
+                                    // Expanded(
+                                    //     child:  CustomButton(
+                                    //         height: getVerticalSize(55),
+                                    //         text: "lbl_facebook".tr,
+                                    //         margin: getMargin(right: 4),
+                                    //         variant:
+                                    //         ButtonVariant.OutlineIndigo300,
+                                    //         padding: ButtonPadding.PaddingT16,
+                                    //         fontStyle: ButtonFontStyle
+                                    //             .MontserratRegular18,
+                                    //         prefixWidget: Container(
+                                    //             margin: getMargin(right:0 , left: 8),
+                                    //             child: CustomImageView(
+                                    //                 svgPath: ImageConstant
+                                    //                     .imgFacebook)),
+                                    //         onTap: () {
+                                    //            FacebookLoginFun();
+                                    //           // googleLogin();
+                                    //         })
+                                    //
+                                    //
+                                    // ),
 
 
 

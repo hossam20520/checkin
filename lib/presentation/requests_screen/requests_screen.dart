@@ -13,11 +13,10 @@ class RequestsScreen extends GetWidget<RequestsController> {
   @override
   Widget build(BuildContext context) {
     String argumant = Get.arguments;
-    return SafeArea(
-        child: Scaffold(
+    return  Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-                height: getVerticalSize(78),
+                height: getVerticalSize(60),
                 leadingWidth: 40,
                 leading: IconButton(
                   onPressed:()=> Get.back(), icon: Icon(Icons.chevron_left , size: 35,),
@@ -40,7 +39,7 @@ class RequestsScreen extends GetWidget<RequestsController> {
                       RequestsItemModel model = controller
                           .requestsModelObj.value.requestsItemList.value[index];
                       return RequestsItemWidget(model , index);
-                    })))));
+                    }))) );
   }
 
   /// Navigates to the previous screen.

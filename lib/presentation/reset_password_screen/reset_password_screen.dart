@@ -14,8 +14,7 @@ class ResetPasswordScreen extends GetWidget<ResetPasswordController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return   Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
@@ -146,7 +145,7 @@ class ResetPasswordScreen extends GetWidget<ResetPasswordController> {
                               onTap: () {
                                 onTapConfirm();
                               })
-                        ])))));
+                        ]))));
   }
 
   onTapConfirm() {

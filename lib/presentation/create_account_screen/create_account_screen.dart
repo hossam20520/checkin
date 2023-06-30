@@ -275,33 +275,33 @@ class CreateAccountScreen extends GetWidget<CreateAccountController> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Padding(
-                                            padding:
-                                                getPadding(top: 9, bottom: 9),
-                                            child: SizedBox(
-                                                width: getHorizontalSize(65),
-                                                child: Divider(
-                                                    height: getVerticalSize(1),
-                                                    thickness:
-                                                        getVerticalSize(1),
-                                                    color: ColorConstant
-                                                        .black900))),
-                                        Text("msg_or_create_account".tr,
-                                            overflow: TextOverflow.ellipsis,
-                                            textAlign: TextAlign.left,
-                                            style: AppStyle
-                                                .txtMontserratLight16Black900),
-                                        Padding(
-                                            padding:
-                                                getPadding(top: 9, bottom: 9),
-                                            child: SizedBox(
-                                                width: getHorizontalSize(65),
-                                                child: Divider(
-                                                    height: getVerticalSize(1),
-                                                    thickness:
-                                                        getVerticalSize(1),
-                                                    color: ColorConstant
-                                                        .black900)))
+                                        // Padding(
+                                        //     padding:
+                                        //         getPadding(top: 9, bottom: 9),
+                                        //     child: SizedBox(
+                                        //         width: getHorizontalSize(65),
+                                        //         child: Divider(
+                                        //             height: getVerticalSize(1),
+                                        //             thickness:
+                                        //                 getVerticalSize(1),
+                                        //             color: ColorConstant
+                                        //                 .black900))),
+                                        // Text("msg_or_create_account".tr,
+                                        //     overflow: TextOverflow.ellipsis,
+                                        //     textAlign: TextAlign.left,
+                                        //     style: AppStyle
+                                        //         .txtMontserratLight16Black900),
+                                        // Padding(
+                                        //     padding:
+                                        //         getPadding(top: 9, bottom: 9),
+                                        //     child: SizedBox(
+                                        //         width: getHorizontalSize(65),
+                                        //         child: Divider(
+                                        //             height: getVerticalSize(1),
+                                        //             thickness:
+                                        //                 getVerticalSize(1),
+                                        //             color: ColorConstant
+                                        //                 .black900)))
                                       ])),
                               Padding(
                                   padding: getPadding(left: 1, top: 25),
@@ -309,58 +309,58 @@ class CreateAccountScreen extends GetWidget<CreateAccountController> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
-                                        Expanded(
-                                            child: CustomButton(
-                                                height: getVerticalSize(55),
-                                                text: "lbl_google".tr,
-                                                margin: getMargin(right: 4),
-                                                variant: ButtonVariant
-                                                    .OutlineIndigo300,
-                                                padding:
-                                                    ButtonPadding.PaddingT16,
-                                                fontStyle: ButtonFontStyle
-                                                    .MontserratRegular18,
-                                                prefixWidget: Container(
-                                                    margin:
-                                                        getMargin(right: 14 , left: 14),
-                                                    child: CustomImageView(
-                                                        svgPath: ImageConstant
-                                                            .imgBrands)))),
+                                        // Expanded(
+                                        //     child: CustomButton(
+                                        //         height: getVerticalSize(55),
+                                        //         text: "lbl_google".tr,
+                                        //         margin: getMargin(right: 4),
+                                        //         variant: ButtonVariant
+                                        //             .OutlineIndigo300,
+                                        //         padding:
+                                        //             ButtonPadding.PaddingT16,
+                                        //         fontStyle: ButtonFontStyle
+                                        //             .MontserratRegular18,
+                                        //         prefixWidget: Container(
+                                        //             margin:
+                                        //                 getMargin(right: 14 , left: 14),
+                                        //             child: CustomImageView(
+                                        //                 svgPath: ImageConstant
+                                        //                     .imgBrands)))),
 
-                                        SizedBox(width: 20,),
+                                        // SizedBox(width: 20,),
 
-                                        Expanded(
-                                            child: Container(
-                                                margin: getMargin(left: 4),
-                                                padding: getPadding(
-                                                    left: 12,
-                                                    top: 15,
-                                                    right: 12,
-                                                    bottom: 15),
-                                                decoration: AppDecoration
-                                                    .outlineIndigo300
-                                                    .copyWith(
-                                                        borderRadius:
-                                                            BorderRadiusStyle
-                                                                .roundedBorder11),
-                                                child: Row(children: [
-                                                  CustomImageView(
-                                                      svgPath: ImageConstant
-                                                          .imgFacebook,
-                                                      height: getSize(24),
-                                                      width: getSize(24)),
-                                                  Padding(
-                                                      padding: getPadding(
-                                                          left: 10, bottom: 1 , right: 12),
-                                                      child: Text(
-                                                          "lbl_facebook".tr,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                          textAlign:
-                                                              TextAlign.left,
-                                                          style: AppStyle
-                                                              .txtMontserratRegular18))
-                                                ])))
+                                        // Expanded(
+                                        //     child: Container(
+                                        //         margin: getMargin(left: 4),
+                                        //         padding: getPadding(
+                                        //             left: 12,
+                                        //             top: 15,
+                                        //             right: 12,
+                                        //             bottom: 15),
+                                        //         decoration: AppDecoration
+                                        //             .outlineIndigo300
+                                        //             .copyWith(
+                                        //                 borderRadius:
+                                        //                     BorderRadiusStyle
+                                        //                         .roundedBorder11),
+                                        //         child: Row(children: [
+                                        //           CustomImageView(
+                                        //               svgPath: ImageConstant
+                                        //                   .imgFacebook,
+                                        //               height: getSize(24),
+                                        //               width: getSize(24)),
+                                        //           Padding(
+                                        //               padding: getPadding(
+                                        //                   left: 10, bottom: 1 , right: 12),
+                                        //               child: Text(
+                                        //                   "lbl_facebook".tr,
+                                        //                   overflow: TextOverflow
+                                        //                       .ellipsis,
+                                        //                   textAlign:
+                                        //                       TextAlign.left,
+                                        //                   style: AppStyle
+                                        //                       .txtMontserratRegular18))
+                                        //         ])))
                                       ])),
                               GestureDetector(
                                   onTap: () {

@@ -10,11 +10,10 @@ class ServiceProviderOneScreen extends GetWidget<ServiceProviderOneController> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return  Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-                height: getVerticalSize(78),
+                height: getVerticalSize(60),
                 leadingWidth: 40,
                 leading: AppbarImage(
                     height: getVerticalSize(15),
@@ -153,7 +152,7 @@ class ServiceProviderOneScreen extends GetWidget<ServiceProviderOneController> {
                                         textAlign: TextAlign.left,
                                         style: AppStyle.txtMontserratMedium24))
                               ]))
-                    ]))));
+                    ])) );
   }
 
   /// Navigates to the previous screen.

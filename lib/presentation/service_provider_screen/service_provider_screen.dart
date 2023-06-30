@@ -11,20 +11,20 @@ class ServiceProviderScreen extends GetWidget<ServiceProviderController> {
   final car = Get.find<PrefUtils>().getCar();
   final hotel = Get.find<PrefUtils>().getHotel();
 
-
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return   Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-                height: getVerticalSize(78),
+                height: getVerticalSize(60),
                 leadingWidth: 40,
-                leading:  IconButton(
-                  onPressed: ()=> Get.back(), icon: Icon(  Icons.chevron_left , size: 40,),
-
-
-                ) ,
+                leading: IconButton(
+                  onPressed: () => Get.back(),
+                  icon: Icon(
+                    Icons.chevron_left,
+                    size: 40,
+                  ),
+                ),
                 title: AppbarSubtitle(
                     text: "msg_service_provider".tr,
                     margin: getMargin(left: 30)),
@@ -114,123 +114,172 @@ class ServiceProviderScreen extends GetWidget<ServiceProviderController> {
                       //                   style: AppStyle.txtMontserratMedium24))
                       //         ])),
 
-                       flight == "true"  ? InkWell( onTap: ()=>  Get.toNamed(AppRoutes.requestsScreen ,
-                       arguments: "flights"
-                       ),  child:  Container(
-                          margin: getMargin(left: 1, top: 32, bottom: 5),
-                          padding: getPadding(
-                              left: 50, top: 24, right: 50, bottom: 24),
-                          decoration: AppDecoration.outlineBlack900191.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder11),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    elevation: 0,
-                                    margin: EdgeInsets.all(0),
-                                    color: ColorConstant.indigo50,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                        BorderRadiusStyle.circleBorder46),
-                                    child: Container(
-                                        height: getSize(93),
-                                        width: getSize(93),
-                                        padding: getPadding(all: 24),
-                                        decoration: AppDecoration.fillIndigo50
-                                            .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .circleBorder46),
-                                        child: Stack(children: [
-                                    Icon(Icons.flight , size: 60,color:  ColorConstant.indigo700,)
-                                        ]))),
-                                Padding(
-                                    padding: getPadding(top: 30, bottom: 32),
-                                    child: Text("lbl_flight_ser".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtMontserratMedium24Black900))
-                              ])),) : SizedBox.shrink(),
-
-                      hotel == "true"  ? InkWell( onTap: ()=>  Get.toNamed(AppRoutes.requestsScreen ,
-                          arguments: "hotel"
-                      ),  child:  Container(
-                          margin: getMargin(left: 1, top: 32, bottom: 5),
-                          padding: getPadding(
-                              left: 50, top: 24, right: 50, bottom: 24),
-                          decoration: AppDecoration.outlineBlack900191.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder11),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    elevation: 0,
-                                    margin: EdgeInsets.all(0),
-                                    color: ColorConstant.indigo50,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                        BorderRadiusStyle.circleBorder46),
-                                    child: Container(
-                                        height: getSize(93),
-                                        width: getSize(93),
-                                        padding: getPadding(all: 24),
-                                        decoration: AppDecoration.fillIndigo50
-                                            .copyWith(
-                                            borderRadius: BorderRadiusStyle
-                                                .circleBorder46),
-                                        child: Stack(children: [
-                                          Icon(Icons.hotel , size: 60, color:  ColorConstant.indigo700,)
-                                        ]))),
-                                Padding(
-                                    padding: getPadding(top: 30, bottom: 32),
-                                    child: Text("lbl_hotel_serv".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtMontserratMedium24Black900))
-                              ]))) : SizedBox.shrink(),
-
-                      car == "true"  ?  InkWell( onTap: ()=>  Get.toNamed(AppRoutes.requestsScreen ,
-                          arguments: "car"
-                      ),  child:Container(
-                          margin: getMargin(left: 1, top: 32, bottom: 5),
-                          padding: getPadding(
-                              left: 50, top: 24, right: 50, bottom: 24),
-                          decoration: AppDecoration.outlineBlack900191.copyWith(
-                              borderRadius: BorderRadiusStyle.roundedBorder11),
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Card(
-                                    clipBehavior: Clip.antiAlias,
-                                    elevation: 0,
-                                    margin: EdgeInsets.all(0),
-                                    color: ColorConstant.indigo50,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadiusStyle.circleBorder46),
-                                    child: Container(
-                                        height: getSize(93),
-                                        width: getSize(93),
-                                        padding: getPadding(all: 24),
-                                        decoration: AppDecoration.fillIndigo50
-                                            .copyWith(
+                      flight == "true"
+                          ? InkWell(
+                              onTap: () => Get.toNamed(AppRoutes.requestsScreen,
+                                  arguments: "flights"),
+                              child: Container(
+                                  margin:
+                                      getMargin(left: 1, top: 32, bottom: 5),
+                                  padding: getPadding(
+                                      left: 50, top: 24, right: 50, bottom: 24),
+                                  decoration: AppDecoration.outlineBlack900191
+                                      .copyWith(
+                                          borderRadius: BorderRadiusStyle
+                                              .roundedBorder11),
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Card(
+                                            clipBehavior: Clip.antiAlias,
+                                            elevation: 0,
+                                            margin: EdgeInsets.all(0),
+                                            color: ColorConstant.indigo50,
+                                            shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadiusStyle
                                                     .circleBorder46),
-                                        child: Stack(children: [
-                                          Icon(Icons.car_rental , size: 60, color:  ColorConstant.indigo700,)
-                                        ]))),
-                                Padding(
-                                    padding: getPadding(top: 30, bottom: 32),
-                                    child: Text("lbl_car_hire".tr,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.left,
-                                        style: AppStyle
-                                            .txtMontserratMedium24Black900))
-                              ]))) : SizedBox.shrink()
-                    ]))));
+                                            child: Container(
+                                                height: getSize(93),
+                                                width: getSize(93),
+                                                padding: getPadding(all: 24),
+                                                decoration: AppDecoration
+                                                    .fillIndigo50
+                                                    .copyWith(
+                                                        borderRadius:
+                                                            BorderRadiusStyle
+                                                                .circleBorder46),
+                                                child: Stack(children: [
+                                                  Padding(
+                                                      padding: getPadding(
+                                                        right: 5),
+                                                      child: Icon(
+                                                        Icons.flight,
+                                                        size: 60,
+                                                        color: ColorConstant
+                                                            .indigo700,
+                                                      ))
+                                                ]))),
+                                        Padding(
+                                            padding:
+                                                getPadding(top: 30, bottom: 32),
+                                            child: Text("lbl_flight_ser".tr,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.left,
+                                                style: AppStyle
+                                                    .txtMontserratMedium24Black900))
+                                      ])),
+                            )
+                          : SizedBox.shrink(),
+
+                      hotel == "true"
+                          ? InkWell(
+                              onTap: () => Get.toNamed(AppRoutes.requestsScreen,
+                                  arguments: "hotel"),
+                              child: Container(
+                                  margin:
+                                      getMargin(left: 1, top: 32, bottom: 5),
+                                  padding: getPadding(
+                                      left: 50, top: 24, right: 50, bottom: 24),
+                                  decoration: AppDecoration.outlineBlack900191
+                                      .copyWith(
+                                          borderRadius: BorderRadiusStyle
+                                              .roundedBorder11),
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Card(
+                                            clipBehavior: Clip.antiAlias,
+                                            elevation: 0,
+                                            margin: EdgeInsets.all(0),
+                                            color: ColorConstant.indigo50,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadiusStyle
+                                                    .circleBorder46),
+                                            child: Container(
+                                                height: getSize(93),
+                                                width: getSize(93),
+                                                padding: getPadding(all: 24),
+                                                decoration: AppDecoration
+                                                    .fillIndigo50
+                                                    .copyWith(
+                                                        borderRadius:
+                                                            BorderRadiusStyle
+                                                                .circleBorder46),
+                                                child: Stack(children: [
+                                                  Icon(
+                                                    Icons.hotel,
+                                                    size: 60,
+                                                    color:
+                                                        ColorConstant.indigo700,
+                                                  )
+                                                ]))),
+                                        Padding(
+                                            padding:
+                                                getPadding(top: 30, bottom: 32),
+                                            child: Text("lbl_hotel_serv".tr,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.left,
+                                                style: AppStyle
+                                                    .txtMontserratMedium24Black900))
+                                      ])))
+                          : SizedBox.shrink(),
+
+                      car == "true"
+                          ? InkWell(
+                              onTap: () => Get.toNamed(AppRoutes.requestsScreen,
+                                  arguments: "car"),
+                              child: Container(
+                                  margin:
+                                      getMargin(left: 1, top: 32, bottom: 5),
+                                  padding: getPadding(
+                                      left: 50, top: 24, right: 50, bottom: 24),
+                                  decoration: AppDecoration.outlineBlack900191
+                                      .copyWith(
+                                          borderRadius: BorderRadiusStyle
+                                              .roundedBorder11),
+                                  child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Card(
+                                            clipBehavior: Clip.antiAlias,
+                                            elevation: 0,
+                                            margin: EdgeInsets.all(0),
+                                            color: ColorConstant.indigo50,
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadiusStyle
+                                                    .circleBorder46),
+                                            child: Container(
+                                                height: getSize(93),
+                                                width: getSize(93),
+                                                padding: getPadding(all: 24),
+                                                decoration: AppDecoration
+                                                    .fillIndigo50
+                                                    .copyWith(
+                                                        borderRadius:
+                                                            BorderRadiusStyle
+                                                                .circleBorder46),
+                                                child: Stack(children: [
+                                                  Icon(
+                                                    Icons.car_rental,
+                                                    size: 60,
+                                                    color:
+                                                        ColorConstant.indigo700,
+                                                  )
+                                                ]))),
+                                        Padding(
+                                            padding:
+                                                getPadding(top: 30, bottom: 32),
+                                            child: Text("lbl_car_hire".tr,
+                                                overflow: TextOverflow.ellipsis,
+                                                textAlign: TextAlign.left,
+                                                style: AppStyle
+                                                    .txtMontserratMedium24Black900))
+                                      ])))
+                          : SizedBox.shrink()
+                    ])));
   }
 
   /// Navigates to the previous screen.

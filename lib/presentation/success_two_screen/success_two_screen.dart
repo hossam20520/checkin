@@ -6,8 +6,7 @@ import 'package:flutter/material.dart';
 class SuccessTwoScreen extends GetWidget<SuccessTwoController> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-        child: Scaffold(
+    return  Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             body: Container(
                 width: double.maxFinite,
@@ -35,12 +34,13 @@ class SuccessTwoScreen extends GetWidget<SuccessTwoController> {
                               style: AppStyle.txtMontserratLight16Black900)),
                       Spacer(),
                       CustomButton(
+                          margin: getMargin(bottom: 200),
                           height: getVerticalSize(62),
                           text: "lbl_log_in".tr,
                           onTap: () {
                             onTapLogin();
                           })
-                    ]))));
+                    ])));
   }
 
   onTapLogin() {

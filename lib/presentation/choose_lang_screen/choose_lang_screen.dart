@@ -18,10 +18,12 @@ class ChooseLangScreen extends GetWidget<ChooseLangController> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("lbl_check_in".tr,
+                Padding(
+                padding: getPadding(top: 55),
+                child:Text("lbl_check_in".tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
-                          style: AppStyle.txtMontserratSemiBold24),
+                          style: AppStyle.txtMontserratSemiBold24)),
                       Padding(
                           padding: getPadding(top: 31),
                           child: Text("msg_welcome_to_check".tr,

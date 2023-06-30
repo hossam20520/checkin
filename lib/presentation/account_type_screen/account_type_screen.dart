@@ -11,15 +11,18 @@ class AccountTypeScreen extends GetWidget<AccountTypeController> {
             resizeToAvoidBottomInset: false,
             backgroundColor: ColorConstant.whiteA700,
             body: Container(
+
                 width: double.maxFinite,
                 padding: getPadding(all: 26),
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Text("lbl_check_in".tr,
+                Padding(
+                padding: getPadding(top: 40),
+                child:Text("lbl_check_in".tr,
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.left,
-                          style: AppStyle.txtMontserratSemiBold24),
+                          style: AppStyle.txtMontserratSemiBold24)),
                       Padding(
                           padding: getPadding(top: 36),
                           child: Text("msg_choose_account_type".tr,

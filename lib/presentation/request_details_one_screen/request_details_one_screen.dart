@@ -15,11 +15,10 @@ class RequestDetailsOneScreen extends GetWidget<RequestDetailsOneController> {
   // requestDetailsOneModelObj.value.paymentModel.value.status
   @override
   Widget build(BuildContext context) {
-    return    Obx(()=>  SafeArea(
-        child: Scaffold(
+    return    Obx(()=>    Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-                height: getVerticalSize(78),
+                height: getVerticalSize(60),
                 leadingWidth: 40,
                 leading: IconButton(
                   onPressed: ()=> Get.back(),
@@ -223,7 +222,7 @@ class RequestDetailsOneScreen extends GetWidget<RequestDetailsOneController> {
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtMontserratLight16Indigo300)) ,)
-                    ])))));
+                    ])) ));
   }
 
 

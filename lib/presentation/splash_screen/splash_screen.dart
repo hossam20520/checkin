@@ -14,7 +14,7 @@ class SplashScreen extends GetWidget<SplashController> {
       backgroundColor: ColorConstant.indigo900,
       body: Center(
         child: Text(
-          "lbl_check_in".tr,
+          "Check in",
           style: TextStyle(
             color: Colors.white,
             fontSize: 40,
