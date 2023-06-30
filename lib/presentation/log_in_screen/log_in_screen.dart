@@ -314,8 +314,37 @@ class LogInScreen extends GetWidget<LogInController> {
                                                 decoration:
                                                     TextDecoration.underline))
                                       ]),
+                                      textAlign: TextAlign.left))),
+
+                          GestureDetector(
+                              onTap: () {
+                                Skip();
+                              },
+                              child: Padding(
+                                  padding: getPadding(top: 25, bottom: 60),
+                                  child: RichText(
+                                      text: TextSpan(children: [
+
+                                        TextSpan(
+                                            text: "lbl_skip".tr,
+                                            style: TextStyle(
+                                                color: ColorConstant.fromHex(
+                                                    "#353ba3"),
+                                                fontSize: getFontSize(16),
+                                                fontFamily: 'Montserrat',
+                                                fontWeight: FontWeight.w600,
+                                                decoration:
+                                                TextDecoration.underline))
+                                      ]),
                                       textAlign: TextAlign.left)))
                         ]))));
+  }
+
+  Skip(){
+    Get.find<PrefUtils>().isLogged('no');
+    Get.toNamed(
+      AppRoutes.homeHotelsContainer1Screen,
+    );
   }
 
 FacebookLoginFun() async {

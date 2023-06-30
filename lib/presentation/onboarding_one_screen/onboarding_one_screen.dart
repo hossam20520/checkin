@@ -86,9 +86,9 @@ class OnboardingOneScreen extends GetWidget<OnboardingOneController> {
   }
 
   onTapTxtSkip() {
-    Get.find<PrefUtils>().isLogged('no');
+    // Get.find<PrefUtils>().isLogged('no');
     Get.toNamed(
-      AppRoutes.homeHotelsContainer1Screen,
+      AppRoutes.logInScreen,
     );
   }
 }

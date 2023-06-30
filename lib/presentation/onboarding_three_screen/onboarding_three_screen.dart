@@ -73,9 +73,9 @@ class OnboardingThreeScreen extends GetWidget<OnboardingThreeController> {
   }
 
   onTapTxtSkip() {
-    Get.find<PrefUtils>().isLogged('no');
+    // Get.find<PrefUtils>().isLogged('no');
     Get.toNamed(
-      AppRoutes.homeHotelsContainer1Screen,
+      AppRoutes.logInScreen,
     );
   }
 }

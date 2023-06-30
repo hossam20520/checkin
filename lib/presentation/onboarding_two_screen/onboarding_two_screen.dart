@@ -73,9 +73,9 @@ class OnboardingTwoScreen extends GetWidget<OnboardingTwoController> {
   }
 
   onTapTxtSkip() {
-    Get.find<PrefUtils>().isLogged('no');
+
     Get.toNamed(
-      AppRoutes.homeHotelsContainer1Screen,
+      AppRoutes.logInScreen,
     );
   }
 }
