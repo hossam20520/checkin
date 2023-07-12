@@ -1,7 +1,13 @@
 final Map<String, String> enUs = {
+  'Settins':'Settings',
+  'msg_show_results':'Show Results',
+  'selcectCountry':'Select Country',
+  'lbl_reserve_nowPay':'Delevery On Cash',
   'Login_First_To_Reserve':'Log in First To Reserve',
-
-
+  'msg_account_information':'Account Information',
+  'lbl_username':'Username',
+  'lbl_emial':'Email',
+ 'selcectCountry':'Select Country',
   'ORM':' ORM ',
   'PaymentStatus':'Status',
 'lbl_total_price':'Total',

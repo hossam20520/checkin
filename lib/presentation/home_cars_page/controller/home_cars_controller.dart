@@ -85,15 +85,19 @@ class HomeCarsController extends GetxController {
       String id = car.id.toString();
       final countryCode =   Get.find<PrefUtils>().getLang();
       String title =  "";
+      String coin = "";
       if (countryCode == 'ar') {
+
          title = car.arName.toString();
+         coin = car.ar_currency.toString();
       }else{
         title = car.enName.toString();
+        coin = car.en_currency.toString();
       }
 
       return HomeCarsItemModel(id:Rx(id) ,
 
-        title: Rx(title) , price: Rx(price), image: Rx(iamge), carType: Rx(cartype)
+        title: Rx(title) , price: Rx(price), image: Rx(iamge), carType: Rx(cartype) , coin: Rx(coin)
 
       );
 

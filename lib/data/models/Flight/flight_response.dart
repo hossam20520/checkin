@@ -33,7 +33,8 @@ class Flight {
   String? active;
   int? price;
   String? image;
-
+  String? en_currency;
+  String? ar_currency;
 
   Flight({
     this.id,
@@ -50,6 +51,9 @@ class Flight {
     this.active,
     this.price,
     this.image,
+    this.en_currency,
+    this.ar_currency
+
   });
 
 
@@ -68,7 +72,8 @@ class Flight {
     active = json['active'];
     price = json['price'];
     image = json['image'];
-
+    en_currency = json['en_currency'];
+    ar_currency = json['ar_currency'];
   }
 
 

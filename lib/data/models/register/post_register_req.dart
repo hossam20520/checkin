@@ -6,6 +6,7 @@ class PostRegisterReq {
   String? lastname;
   String? mobile;
   String? type;
+  String? cce_id;
 
 
   PostRegisterReq(
@@ -16,6 +17,7 @@ class PostRegisterReq {
       this.lastname,
       this.mobile,
       this.type,
+       this.cce_id,
    });
 
   PostRegisterReq.fromJson(Map<String, dynamic> json) {
@@ -50,6 +52,10 @@ class PostRegisterReq {
 
     if (this.type != null) {
       data['type'] = this.type;
+    }
+
+    if (this.cce_id != null) {
+      data['cce_id'] = this.cce_id;
     }
 
 

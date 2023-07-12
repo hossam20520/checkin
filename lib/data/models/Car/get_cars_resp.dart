@@ -30,7 +30,8 @@ class Car {
   String? cartype;
   double? priceperday;
   String? image;
-
+  String? en_currency;
+  String? ar_currency;
 
   Car({
     this.id,
@@ -39,6 +40,8 @@ class Car {
     this.cartype,
     this.priceperday,
     this.image,
+    this.en_currency,
+    this.ar_currency
   });
 
 
@@ -49,6 +52,10 @@ class Car {
     cartype = json['car_type'];
     priceperday = json['price_per_day'].toDouble();
     image  =json['image'];
+
+    en_currency = json['en_currency'];
+    ar_currency = json['ar_currency'];
+
   }
 }
 

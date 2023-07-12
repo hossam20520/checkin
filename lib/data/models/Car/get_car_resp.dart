@@ -8,7 +8,8 @@ class CarResp{
   double? priceperday;
   String? image;
   List<Facility>? facilitie;
-
+  String? en_currency;
+  String? ar_currency;
 
   CarResp({
     this.id,
@@ -17,7 +18,9 @@ class CarResp{
     this.cartype,
     this.priceperday,
     this.image,
-    this.facilitie
+    this.facilitie,
+    this.en_currency,
+    this.ar_currency
   });
 
 
@@ -25,6 +28,8 @@ class CarResp{
     id  = json['id'];
     arName = json['ar_name'];
     enName = json['en_name'];
+    en_currency = json['en_currency'];
+    ar_currency = json['ar_currency'];
     cartype = json['car_type'];
     priceperday = json['price_per_day'].toDouble();
     image  = json['image'];

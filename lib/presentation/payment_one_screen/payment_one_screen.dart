@@ -246,14 +246,26 @@ class PaymentOneScreen extends GetWidget<PaymentOneController> {
                           ])),
 
                       isLogged == "yes" ?
-                      CustomButton(
+
+                     Column(children: [  CustomButton(
                           height: getVerticalSize(62),
                           text: "lbl_reserve_now".tr,
                           margin: getMargin(
-                              left: 27, top: 48, right: 26, bottom: 37),
+                              left: 27, top: 48, right: 26, bottom: 5),
                           onTap: () {
                             onTapReservenow();
+                          }) ,
+                      CustomButton(
+                          height: getVerticalSize(62),
+                          text: "lbl_reserve_nowPay".tr,
+                          margin: getMargin(
+                              left: 27, top: 5, right: 26, bottom: 37),
+                          onTap: () {
+                            onTapReservenowCash();
                           })
+
+                     ],)
+
                           :
                       CustomButton(
                           height: getVerticalSize(62),
@@ -264,15 +276,21 @@ class PaymentOneScreen extends GetWidget<PaymentOneController> {
                             Get.toNamed(AppRoutes.logInScreen);
                           })
 
+
+
                     ])));
   }
 
   onTapReservenow() {
-     controller.pay();
+     controller.pay("online");
     // Get.toNamed(
     //   AppRoutes.paymentWebScreen,
     //   arguments: "flight",
     // );
+  }
+
+  onTapReservenowCash(){
+    controller.pay("cash");
   }
 
   onTapArrowleft15() {

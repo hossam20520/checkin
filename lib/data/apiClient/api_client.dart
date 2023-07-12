@@ -14,6 +14,7 @@ import 'package:checkin/data/models/register/post_register_resp.dart';
 import '../models/About/about_resp.dart';
 import '../models/Book/RequestsResponse.dart';
 import '../models/Book/book_response.dart';
+import '../models/Country/CountryResp.dart';
 import '../models/Hotel/get_hotel_detail.dart';
 import '../models/Hotel/get_hotel_resp.dart';
 import '../models/Notification/NotiResp.dart';
@@ -82,6 +83,45 @@ class ApiClient extends GetConnect {
       rethrow;
     }
   }
+
+
+
+  Future<CountryResp> GetCountries({
+    Map<String, String> headers = const {},
+    Map requestData = const {},
+  }) async {
+    ProgressDialogUtils.showProgressDialog();
+    try {
+      await isNetworkConnected();
+      Response response = await httpClient.get(
+        '$url/api/device/countries',
+        headers: headers,
+
+      );
+      Logger.PretteyLogger(response.body);
+
+      ProgressDialogUtils.hideProgressDialog();
+      if (_isSuccessCall(response)) {
+
+        return CountryResp.fromJson(response.body);
+      } else {
+
+
+        throw response.body != null
+
+            ? CountryResp.fromJson(response.body)
+            : 'Something Went Wrong!';
+      }
+    } catch (error, stackTrace) {
+      ProgressDialogUtils.hideProgressDialog();
+      Logger.log(
+        error,
+        stackTrace: stackTrace,
+      );
+      rethrow;
+    }
+  }
+
 
 
 

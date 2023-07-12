@@ -142,7 +142,7 @@ class AccountTypeScreen extends GetWidget<AccountTypeController> {
 
   onTapContinue() {
     Get.toNamed(
-      AppRoutes.logInScreen,
+      AppRoutes.createAccountScreen,
     );
   }
 }

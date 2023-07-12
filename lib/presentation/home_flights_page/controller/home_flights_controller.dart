@@ -81,9 +81,10 @@ class HomeFlightsController extends GetxController {
        String return_date = flight.returnDate.toString();
        double price = flight.price!.toDouble();
        String image =   Constants.flights + flight.image.toString();
-
+       String coin  =   flight.en_currency.toString();
        String id = flight.id.toString();
        return CardsItemModel(title: Rx(title) , id:Rx(id) ,
+           coin: Rx(coin),
            airportFrom: Rx(ariFrom) ,
            price: Rx(price),
            departure_date: Rx(departure_date),

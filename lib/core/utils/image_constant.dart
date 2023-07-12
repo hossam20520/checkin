@@ -1,6 +1,6 @@
 class ImageConstant {
 
-
+  static String sort = 'assets/images/sort.svg';
   static String bags = 'assets/images/bag.svg';
   static String imgBed13 = 'assets/images/img_bed1_3.png';
   static String imgBed12 = 'assets/images/img_bed1_2.png';

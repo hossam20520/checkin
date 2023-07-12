@@ -35,7 +35,7 @@ class TermsConditionsScreen extends GetWidget<TermsConditionsController> {
                           width: getSize(74)),
                       Padding(
                           padding: getPadding(top: 32),
-                          child: Text("Terms_condition".tr,
+                          child: Text("msg_terms_conditions".tr,
                               overflow: TextOverflow.ellipsis,
                               textAlign: TextAlign.left,
                               style: AppStyle.txtMontserratSemiBold18)),

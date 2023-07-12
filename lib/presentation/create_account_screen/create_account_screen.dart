@@ -1,3 +1,4 @@
+import '../../widgets/custom_drop_down.dart';
 import 'controller/create_account_controller.dart';
 import 'package:checkin/core/app_export.dart';
 import 'package:checkin/core/utils/validation_functions.dart';
@@ -16,8 +17,10 @@ import 'package:checkin/domain/facebookauth/facebook_user.dart';
 class CreateAccountScreen extends GetWidget<CreateAccountController> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+
   @override
   Widget build(BuildContext context) {
+    controller.fetchCountryItems();
     return   Scaffold(
             resizeToAvoidBottomInset: false,
             backgroundColor: ColorConstant.whiteA700,
@@ -148,6 +151,28 @@ class CreateAccountScreen extends GetWidget<CreateAccountController> {
                                     }
                                     return null;
                                   }),
+
+
+
+
+
+                             Obx(() =>   CustomDropDown(
+                                  focusNode: FocusNode(),
+                                  icon: Container(
+                                      margin: getMargin(left: 30, right: 40),
+                                      child: CustomImageView(
+                                          svgPath: ImageConstant.imgArrowdown)  ),
+                                  hintText: "selcectCountry".tr,
+                                  padding: DropDownPadding.PaddingT15 ,
+                                  margin:  getMargin( top: 10   ),
+                                  alignment: Alignment.center,
+                                  items: controller.createAccountModelObj.value
+                                      .dropdownItemList.value,
+                                  onChanged: (value) {
+                                    controller.onSelected(value);
+                                  }) ),
+
+
                               CustomTextFormField(
                                   focusNode: FocusNode(),
                                   controller: controller.mobilenumberController,
@@ -394,16 +419,20 @@ class CreateAccountScreen extends GetWidget<CreateAccountController> {
                             ])))));
   }
 
+
+
   Future<void> onTapCreateaccount() async {
    String type =  Get.find<PrefUtils>().getType();
     if (_formKey.currentState!.validate()) {
       PostRegisterReq postRegisterReq = PostRegisterReq(
+
         password: controller.passwordController.text,
         mobile: controller.mobilenumberController.text,
         firstname: controller.firstNameController.text,
         lastname: controller.lastNameController.text,
         email: controller.emailController.text,
         type: type,
+        cce_id: controller.createAccountModelObj.value.selectedId.toString()
 
       );
       try {

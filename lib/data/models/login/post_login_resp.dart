@@ -38,6 +38,7 @@ class Data{
      user = json['user'] != null ? User.fromJson(json['user']) : null;
      serviceProvider = json['service_provider'] != null ? Provider.fromJson(json['service_provider']) : null;
      token = json['token'];
+
    }
 
 

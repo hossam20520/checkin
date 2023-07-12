@@ -16,9 +16,9 @@ class PaymentController extends GetxController {
   BookResponse bookResponse = BookResponse();
 
 
-  Future<void> pay() async {
+  Future<void> pay(cash) async {
 
-
+    paymentModelObj.value.type.value = cash;
     // final Uri url = Uri.parse('https://uatcheckout.thawani.om/pay/checkout_8SnI9vaEksQl3IYYPtglb9sFm0fLkknq5ZYU8rsAdfPKkUhF4u?key=HGvTMLDssJghr9tlN9gr4DVYt0qyBy');
     // if (!await launchUrl(url)) {
     //   throw Exception('Could not launch  ');
@@ -43,10 +43,12 @@ class PaymentController extends GetxController {
       checkin: checkin.toString(),
       checkout: checkout.toString(),
       type: 'room',
+      payment: cash,
+
     );
-    print("555555555555555555555555555555555555555555555");
+
     CallApi(request);
-    print(bed);
+
   }
 
 
@@ -119,11 +121,19 @@ class PaymentController extends GetxController {
 
     paymentModelObj.value.url.value = bookResponse.url.toString();
 
-    Get.toNamed(
-      AppRoutes.paymentWebScreen,
-      arguments: "room"
 
-    );
+    if (paymentModelObj.value.type.value.toString() == "cash"){
+      Get.toNamed(
+          AppRoutes.successFourScreen,
+          arguments: "room"
+      );
+    }else {
+      Get.toNamed(
+          AppRoutes.paymentWebScreen,
+          arguments: "room"
+      );
+    }
+
 
   }
   void _onGetHotelError() {}

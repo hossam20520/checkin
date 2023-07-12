@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:checkin/data/models/register/post_register_resp.dart';
 import 'package:checkin/data/apiClient/api_client.dart';
 
+import '../../../data/models/Country/CountryResp.dart';
+
 class CreateAccountController extends GetxController {
+
+  SelectionPopupModel? selectedDropDownValue;
   TextEditingController usernameController = TextEditingController();
 
   TextEditingController emailController = TextEditingController();
@@ -24,9 +28,47 @@ class CreateAccountController extends GetxController {
 
 
 
+  onSelected(dynamic value) {
+
+
+
+    selectedDropDownValue = value as SelectionPopupModel;
+
+    createAccountModelObj.update((model) {
+      model!.selectedId.value = value.id.toString();
+    });
+
+    createAccountModelObj.value.dropdownItemList.value.forEach((element) {
+      element.isSelected = false;
+      if (element.id == value.id) {
+        element.isSelected = true;
+      }
+    });
+
+
+
+    createAccountModelObj.value.dropdownItemList.refresh();
+  }
+
+
+
   @override
-  void onReady() {
+  Future<void> onReady() async {
     super.onReady();
+
+    try {
+      await  CallGetCountries();
+      // _onGetHotelSuccess();
+    } on CountryResp {
+      // _onGetHotelError();
+    } on NoInternetException catch (e) {
+      Get.rawSnackbar(message: e.toString());
+    } catch (e) {
+      // _onGetHotelError();
+      print(e);
+      //TODO: Handle generic errors
+    }
+
   }
 
   @override
@@ -39,6 +81,111 @@ class CreateAccountController extends GetxController {
     mobilenumberController.dispose();
     passwordController.dispose();
   }
+
+
+  CountryResp countryResp = CountryResp();
+
+
+  Future<void> CallGetCountries() async {
+
+    try {
+      countryResp = await Get.find<ApiClient>().GetCountries(
+          headers: {
+            'Content-Type': 'application/json',
+          },
+
+
+      );
+
+      _handleGetHotelSuccess();
+
+    } on CountryResp catch (e) {
+      // HotelsResponse = e;
+
+      rethrow;
+    }
+  }
+
+
+
+
+  void _handleGetHotelSuccess() {
+
+    final Itemslist = (countryResp.countries ?? []).map((items) {
+      final countryCode =   Get.find<PrefUtils>().getLang();
+      int? id = items.id;
+      if(countryCode == "ar"){
+
+        String title = items.ar_title.toString();
+        return SelectionPopupModel(
+          id: id,
+          title: title,
+          isSelected: false,
+        );
+
+      }else{
+        String title = items.enTitle.toString();
+
+        return SelectionPopupModel(
+          id: id,
+          title: title,
+          isSelected: false,
+        );
+
+      }
+      // Provide a default value for nullable string
+
+
+
+
+    }).toList();
+
+    createAccountModelObj.value.dropdownItemList.value = Itemslist;
+
+
+
+
+
+
+  }
+
+
+  void _onGetHotelSuccess() {}
+  void _onGetHotelError() {}
+
+  // controller.hotelModelObj.value.id.value
+
+
+
+
+
+
+
+
+
+  void fetchCountryItems() async {
+
+    try {
+      await  CallGetCountries();
+      // _onLoginSuccess();
+    } on CountryResp {
+      // _onLoginError();
+    } on NoInternetException catch (e) {
+      Get.rawSnackbar(message: e.toString());
+    } catch (e) {
+      // _onLoginSuccess();
+      print(e);
+      //TODO: Handle generic errors
+    }
+
+  }
+
+
+
+
+
+
+
 
 
 
@@ -59,8 +206,6 @@ class CreateAccountController extends GetxController {
   }
 
   void _handleCreateRegisterSuccess() {
-
-
 
   }
 }

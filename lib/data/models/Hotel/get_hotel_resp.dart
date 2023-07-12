@@ -37,6 +37,8 @@ class Hotel {
   String? arDescription;
   String? image;
   Country? country;
+  String? en_currency;
+  String? ar_currency;
 
   Hotel({
       this.id,
@@ -49,6 +51,8 @@ class Hotel {
       this.arDescription,
       this.country,
       this.image,
+    this.en_currency,
+    this.ar_currency
   });
 
 
@@ -63,6 +67,9 @@ class Hotel {
       arDescription  = json['ar_description'];
       country  = json['country'] != null ? Country.fromJson(json['country']) : null;
       image  =json['image'];
+ 
+      en_currency = json['en_currency'];
+      ar_currency = json['ar_currency'];
   }
 }
 

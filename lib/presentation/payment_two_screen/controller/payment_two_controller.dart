@@ -94,9 +94,9 @@ class PaymentTwoController extends GetxController {
   BookResponse bookResponse = BookResponse();
 
 
-  Future<void> pay() async {
-    print("545555555555555555555555555555555555555");
+  Future<void> pay(cash) async {
 
+    paymentTwoModelObj.value.type?.value  = cash;
 
     // Rx<String> checkin = Get.find<HomeFlightsController>().homeFlightsModelObj.value.chekin;
     // Rx<String> checkout = Get.find<HomeFlightsController>().homeFlightsModelObj.value.checkout;
@@ -108,6 +108,8 @@ class PaymentTwoController extends GetxController {
       checkin: "0",
       checkout: "0",
       type: 'flight',
+      payment: 'cash'
+
     );
   Logger.PretteyLogger( parameter);
     CallApi(request);
@@ -169,17 +171,35 @@ class PaymentTwoController extends GetxController {
 
   void _onPaymentSuccess() {
 
-    // bookResponse.bookID.toString();
-    // print("545555555555555555555555555555555555555");
-    // print(bookResponse.url.toString());
+
 
     paymentTwoModelObj.value.url.value = bookResponse.url.toString();
 
-    Get.toNamed(
-        AppRoutes.paymentWebScreen,
-        arguments: "flight"
 
-    );
+
+
+
+    if (paymentTwoModelObj.value.type?.value.toString() == "cash"){
+      Get.toNamed(
+          AppRoutes.successFourScreen,
+          arguments: "flight"
+      );
+    }else {
+
+      Get.toNamed(
+          AppRoutes.paymentWebScreen,
+          arguments: "flight"
+
+      );
+
+    }
+
+
+
+
+
+
+
 
   }
 

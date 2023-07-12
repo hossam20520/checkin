@@ -3,6 +3,7 @@ class PostFlightBookReq {
   String? checkin;
   String? checkout;
   String? type;
+  String? payment;
 
 
 
@@ -10,6 +11,7 @@ class PostFlightBookReq {
     this.flightID,
     this.checkin,
     this.checkout,
+    this.payment,
     this.type});
 
   Map<String, dynamic> toJson() {
@@ -27,6 +29,9 @@ class PostFlightBookReq {
       data['type'] = this.type;
     }
 
+    if (this.payment != null) {
+      data['payment'] = this.payment;
+    }
 
     return data;
   }

@@ -145,60 +145,7 @@ print(isProvider);
                 ],
               ),
             ),
-            Container(
-              margin: getMargin(
-                top: 10,
-              ),
-              padding: getPadding(
-                left: 24,
-                top: 10,
-                right: 24,
-                bottom: 10,
-              ),
-              decoration: AppDecoration.fillGray50,
-              child: InkWell(
-                onTap: () => Get.toNamed(
-                  AppRoutes.homeHotelsContainer1Screen,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomImageView(
-                      svgPath: ImageConstant.imgSearch,
-                      height: getSize(
-                        20,
-                      ),
-                      width: getSize(
-                        20,
-                      ),
-                      margin: getMargin(
-                        top: 2,
-                        bottom: 2,
-                      ),
-                    ),
-                    Padding(
-                      padding: getPadding(
-                        left: 16,
-                        right: 10,
-                        top: 2,
-                        bottom: 3,
-                      ),
-                      child: Text(
-                        "lbl_search".tr,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.left,
-                        style: AppStyle.txtMontserratRegular14Black90001,
-                      ),
-                    ),
-                    Spacer(),
-                    Icon(
-                      Icons.chevron_right,
-                      size: 35,
-                    )
-                  ],
-                ),
-              ),
-            ),
+
           InkWell( onTap: ()=>  Notification() ,    child:    Container(
               margin: getMargin(
                 top: 12,
@@ -248,7 +195,43 @@ print(isProvider);
                 ],
               ),
             ),),
-
+            InkWell( onTap: ()=>  Settings() ,    child:    Container(
+              margin: getMargin(
+                top: 12,
+              ),
+              padding: getPadding(
+                left: 24,
+                top: 10,
+                right: 24,
+                bottom: 10,
+              ),
+              decoration: AppDecoration.fillGray50,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                 Icon(Icons.settings , color:ColorConstant.indigo300 ,),
+                  Padding(
+                    padding: getPadding(
+                      left: 16,
+                      top: 2,
+                      right: 10,
+                      bottom: 3,
+                    ),
+                    child: Text(
+                      "Settins".tr,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.left,
+                      style: AppStyle.txtMontserratRegular14Black90001,
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.chevron_right,
+                    size: 35,
+                  )
+                ],
+              ),
+            ),),
 
 
             isProvider == "true" ? InkWell(
@@ -538,10 +521,11 @@ print(isProvider);
                   Padding(
                     padding: getPadding(
                       left: 17,
+                      right: 10
                     ),
                     child: Text(
                       isLogged == "yes" ?
-                      "lbl_log_out".tr : "Log In",
+                      "lbl_log_out".tr : "Login".tr,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: AppStyle.txtMontserratRegular154,
@@ -560,6 +544,13 @@ Notification(){
   Get.toNamed(AppRoutes.notificationsScreen);
 
 }
+
+  Settings(){
+    Get.back();
+    Get.toNamed(AppRoutes.settings);
+
+  }
+
 
 Logout(){
 

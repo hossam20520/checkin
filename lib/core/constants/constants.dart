@@ -5,6 +5,9 @@ import 'package:flutter/cupertino.dart';
 class Constants{
   // static String BaseUrl = "http://10.0.2.2:8000";
   static String BaseUrl = "https://cheeckin.com";
+  // static String BaseUrl = "http://192.168.1.7:8000";
+
+
   static String imageHotels = BaseUrl+"/images/hotels/";
   static String flights = BaseUrl+"/images/flights/";
   static String cars = BaseUrl+"/images/cars/";

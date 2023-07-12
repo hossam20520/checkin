@@ -159,6 +159,13 @@ class CustomDropDown extends StatelessWidget {
 
   _setPadding() {
     switch (padding) {
+      case DropDownPadding.PaddingT15:
+        return getPadding(
+          left: 15,
+          right: 16,
+          top: 15,
+          bottom: 15,
+        );
       default:
         return getPadding(
           left: 15,

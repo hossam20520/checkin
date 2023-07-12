@@ -19,9 +19,9 @@ class CardsItemModel {
   Rx<String>? departure_date = Rx("");
   Rx<String>? return_date = Rx("");
   Rx<double>? price = Rx(0);
+  Rx<String>? coin = Rx("");
 
-
-  CardsItemModel({ this.price, this.departure_date, this.return_date,
+  CardsItemModel({ this.price, this.departure_date, this.return_date, this.coin,
     this.id, this.title, this.image, this.from, this.to , this.airportFrom , this.airportTo
    });
 

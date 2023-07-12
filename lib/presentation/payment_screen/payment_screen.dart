@@ -143,7 +143,7 @@ class PaymentScreen extends GetWidget<PaymentController> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
-                                                Text(price.toString() + " OMR",
+                                                Text(price.toString()  ,
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                     textAlign: TextAlign.left,
@@ -192,7 +192,7 @@ class PaymentScreen extends GetWidget<PaymentController> {
                                                       .txtMontserratRegular18)),
                                           Padding(
                                               padding: getPadding(top: 87),
-                                              child: Text(price.toString() + " OMR",
+                                              child: Text(price.toString()  ,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -216,14 +216,14 @@ class PaymentScreen extends GetWidget<PaymentController> {
                                                       MainAxisAlignment
                                                           .spaceBetween,
                                                   children: [
-                                                    Text(price.toString() + " OMR",
+                                                    Text(price.toString()  ,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         textAlign:
                                                             TextAlign.left,
                                                         style: AppStyle
                                                             .txtMontserratLight16),
-                                                    Text( price.toString() + " OMR",
+                                                    Text( price.toString()   ,
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         textAlign:
@@ -263,7 +263,7 @@ class PaymentScreen extends GetWidget<PaymentController> {
                                                             TextAlign.left,
                                                         style: AppStyle
                                                             .txtInterRegular16),
-                                                    Text( "0 OMR",
+                                                    Text( "0 ",
                                                         overflow: TextOverflow
                                                             .ellipsis,
                                                         textAlign:
@@ -284,16 +284,32 @@ class PaymentScreen extends GetWidget<PaymentController> {
                           height: getVerticalSize(62),
                           text: "lbl_reserve_now".tr,
                           margin: getMargin(
-                              left: 27, top: 48, right: 26, bottom: 37),
+                              left: 27, top: 48, right: 26, bottom: 5),
                           onTap: () {
                             onTapReservenow();
+                          }),
+
+
+                      CustomButton(
+                          height: getVerticalSize(62),
+                          text: "lbl_reserve_nowPay".tr,
+                          margin: getMargin(
+                              left: 27, top: 5, right: 26, bottom: 37),
+                          onTap: () {
+                            onTapReservenowCash();
                           })
                     ])));
   }
 
   onTapReservenow() {
-    controller.pay();
-    // print("55555555555555555555555555555555555555555");
+    controller.pay("online");
+
+
+  }
+
+  onTapReservenowCash() {
+    controller.pay("cash");
+
 
   }
 

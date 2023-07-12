@@ -1,3 +1,4 @@
+import 'package:checkin/presentation/settings_screen/settings_screen.dart';
 import 'package:checkin/presentation/splash_screen/splash_screen.dart';
 import 'package:checkin/presentation/splash_screen/binding/splash_binding.dart';
 import 'package:checkin/presentation/choose_lang_screen/choose_lang_screen.dart';
@@ -82,6 +83,7 @@ import '../presentation/service_provider_one_screen/binding/service_provider_one
 import '../presentation/service_provider_one_screen/service_provider_one_screen.dart';
 import '../presentation/service_provider_screen/binding/service_provider_binding.dart';
 import '../presentation/service_provider_screen/service_provider_screen.dart';
+import '../presentation/settings_screen/binding/settings_binding.dart';
 import '../presentation/terms_conditions_screen/binding/terms_conditions_binding.dart';
 import '../presentation/terms_conditions_screen/terms_conditions_screen.dart';
 
@@ -91,6 +93,7 @@ import '../presentation/terms_conditions_screen/terms_conditions_screen.dart';
 
 class AppRoutes {
 
+  static const String singleProduct1Screen = '/single_product1_screen';
 
   static const String serviceProviderOneScreen = '/service_provider_one_screen';
 
@@ -217,6 +220,9 @@ class AppRoutes {
   static const String homeTabContainerPage =
       '/home_tab_container_page';
   static const String homeCarsPage = '/home_cars_page';
+
+  static const String settings = '/settingsPage';
+
   static List<GetPage> pages = [
 
 
@@ -228,7 +234,13 @@ class AppRoutes {
     //   ],
     // ),
 
-
+    GetPage(
+      name: settings,
+      page: () => SettingsScreen(),
+      bindings: [
+        SettingsBinding(),
+      ],
+    ),
 
     GetPage(
       name: contactUsScreen,

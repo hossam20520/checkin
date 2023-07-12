@@ -453,7 +453,7 @@ FacebookLoginFun() async {
 
   onTapTxtDonthaveanaccount() {
     Get.toNamed(
-      AppRoutes.createAccountScreen,
+      AppRoutes.accountTypeScreen,
     );
   }
 

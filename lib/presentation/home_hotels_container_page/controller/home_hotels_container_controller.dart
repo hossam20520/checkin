@@ -96,15 +96,17 @@ class HomeHotelsContainerController extends GetxController {
       final language =   Get.find<PrefUtils>().getLang();
       String title = "";
       String country = "";
-
+      String coin = "";
 
       if(language == "ar"){
 
         title = hotel.arName.toString();
         country = hotel.country!.arName.toString();
+        coin = hotel.ar_currency.toString();
       }else{
         country = hotel.country!.enName.toString();
         title = hotel.enName.toString();
+        coin = hotel.en_currency.toString();
 
 
       }
@@ -115,6 +117,7 @@ class HomeHotelsContainerController extends GetxController {
         id: Rx(id),
         country: Rx(country),
         price: Rx(price),
+        coin: Rx(coin)
       );
 
 

@@ -142,24 +142,24 @@ class ServiceProviderScreen extends GetWidget<ServiceProviderController> {
                                             child: Container(
                                                 height: getSize(93),
                                                 width: getSize(93),
-                                                padding: getPadding(all: 24),
+
                                                 decoration: AppDecoration
                                                     .fillIndigo50
                                                     .copyWith(
                                                         borderRadius:
                                                             BorderRadiusStyle
                                                                 .circleBorder46),
-                                                child: Stack(children: [
-                                                  Padding(
-                                                      padding: getPadding(
-                                                        right: 5),
-                                                      child: Icon(
-                                                        Icons.flight,
-                                                        size: 60,
-                                                        color: ColorConstant
-                                                            .indigo700,
-                                                      ))
-                                                ]))),
+                                                child:Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Expanded(child:   Icon(
+                                                      Icons.flight,
+                                                      size: 60,
+                                                      color: ColorConstant.indigo700,
+                                                    )  )
+
+                                                ],)
+                                                  ) ) ,
                                         Padding(
                                             padding:
                                                 getPadding(top: 30, bottom: 32),
@@ -200,21 +200,26 @@ class ServiceProviderScreen extends GetWidget<ServiceProviderController> {
                                             child: Container(
                                                 height: getSize(93),
                                                 width: getSize(93),
-                                                padding: getPadding(all: 24),
+
                                                 decoration: AppDecoration
                                                     .fillIndigo50
                                                     .copyWith(
                                                         borderRadius:
                                                             BorderRadiusStyle
                                                                 .circleBorder46),
-                                                child: Stack(children: [
-                                                  Icon(
-                                                    Icons.hotel,
-                                                    size: 60,
-                                                    color:
-                                                        ColorConstant.indigo700,
-                                                  )
-                                                ]))),
+                                                child:Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Expanded(child:   Icon(
+                                                      Icons.hotel,
+                                                      size: 60,
+                                                      color: ColorConstant.indigo700,
+                                                    )  )
+
+                                                  ],)
+
+
+                                                )),
                                         Padding(
                                             padding:
                                                 getPadding(top: 30, bottom: 32),
@@ -254,21 +259,29 @@ class ServiceProviderScreen extends GetWidget<ServiceProviderController> {
                                             child: Container(
                                                 height: getSize(93),
                                                 width: getSize(93),
-                                                padding: getPadding(all: 24),
+
                                                 decoration: AppDecoration
                                                     .fillIndigo50
                                                     .copyWith(
                                                         borderRadius:
                                                             BorderRadiusStyle
                                                                 .circleBorder46),
-                                                child: Stack(children: [
-                                                  Icon(
-                                                    Icons.car_rental,
-                                                    size: 60,
-                                                    color:
-                                                        ColorConstant.indigo700,
-                                                  )
-                                                ]))),
+                                                child:Row(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Expanded(child:   Icon(
+                                                      Icons.car_rental,
+                                                      size: 60,
+                                                      color: ColorConstant.indigo700,
+                                                    )  )
+
+                                                  ],)
+
+
+
+
+
+                                            )),
                                         Padding(
                                             padding:
                                                 getPadding(top: 30, bottom: 32),

@@ -11,7 +11,8 @@ class HotelResponse{
   String? arDescription;
   Country? country;
   List<String>? images;
-
+  String? en_currency;
+  String? ar_currency;
   // String? images;
 
   HotelResponse({
@@ -25,6 +26,8 @@ class HotelResponse{
     this.arDescription,
     this.country,
    this.images,
+    this.en_currency,
+    this.ar_currency
   });
 
 
@@ -40,10 +43,17 @@ class HotelResponse{
     country =   json['country'] != null ? Country.fromJson(json['country']) : null;
     images = json['images'] != null ? List<String>.from(json['images']) : null;
 
+    en_currency = json['en_currency'];
+    ar_currency = json['ar_currency'];
+
 
   }
 
 }
+
+
+
+
 
 
 class Country{

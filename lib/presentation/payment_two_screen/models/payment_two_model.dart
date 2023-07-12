@@ -16,6 +16,8 @@ class PaymentTwoModel {
   Rx<String>? return_date = Rx("");
   Rx<double>? price = Rx(0);
 
+  Rx<String>? type = Rx("");
+
 
 
   Rx<List<PaymenttwoItemModel>> paymenttwoItemList =   Rx(List.generate(2, (index) => PaymenttwoItemModel()));

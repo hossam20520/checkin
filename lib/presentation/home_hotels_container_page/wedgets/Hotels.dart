@@ -117,7 +117,7 @@ class Hotels extends StatelessWidget {
                                           ),
                                           Padding(
                                               padding: getPadding(top: 0),
-                                              child: Text("ORM".tr,
+                                              child: Text( HotelsItemModelObj.coin.toString(),
                                                   overflow: TextOverflow.ellipsis,
 
                                                   style: AppStyle

@@ -46,9 +46,9 @@ class PaymentOneController extends GetxController {
   BookResponse bookResponse = BookResponse();
 
 
-  Future<void> pay() async {
+  Future<void> pay(cash) async {
 
-
+    paymentOneModelObj.value.type.value = cash;
     // final Uri url = Uri.parse('https://uatcheckout.thawani.om/pay/checkout_8SnI9vaEksQl3IYYPtglb9sFm0fLkknq5ZYU8rsAdfPKkUhF4u?key=HGvTMLDssJghr9tlN9gr4DVYt0qyBy');
     // if (!await launchUrl(url)) {
     //   throw Exception('Could not launch  ');
@@ -71,6 +71,7 @@ class PaymentOneController extends GetxController {
       checkin: pickup_date.toString(),
       checkout: drop_off.toString(),
       type: 'car',
+      payment: cash
     );
 
     CallApi(request);
@@ -138,11 +139,24 @@ class PaymentOneController extends GetxController {
 
     paymentOneModelObj.value.url.value = bookResponse.url.toString();
 
-    Get.toNamed(
-      AppRoutes.paymentWebScreen,
-      arguments: "car"
 
-    );
+    if (paymentOneModelObj.value.type.value.toString() == "cash"){
+
+
+      Get.toNamed(
+          AppRoutes.successFourScreen,
+          arguments: "car"
+      );
+
+    }else {
+      Get.toNamed(
+          AppRoutes.paymentWebScreen,
+          arguments: "car" );
+    }
+
+
+
+
 
   }
 

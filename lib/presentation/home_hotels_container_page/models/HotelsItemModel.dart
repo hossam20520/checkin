@@ -9,6 +9,7 @@ class HotelsItemModel{
   Rx<String>? title = Rx("");
   Rx<double>? price = Rx(0);
   Rx<String>? country = Rx("");
+  Rx<String>? coin = Rx("");
 
   HotelsItemModel({
     this.id,
@@ -16,6 +17,7 @@ class HotelsItemModel{
     this.title,
      this.price,
     this.country,
+    this.coin,
   });
 
   HotelsItemModel.fromJson(Map<Hotel, dynamic> json) {

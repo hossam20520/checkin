@@ -1,3 +1,4 @@
+import '../search_results_two_screen/controller/search_results_two_controller.dart';
 import 'controller/filter_controller.dart';
 import 'package:checkin/core/app_export.dart';
 import 'package:checkin/widgets/custom_button.dart';
@@ -5,6 +6,8 @@ import 'package:flutter/material.dart';
 
 class FilterBottomsheet extends StatelessWidget {
   FilterBottomsheet(this.controller);
+  Rx<RangeValues> _currentRangeValues = Rx<RangeValues>(RangeValues(0, 82.26));
+
 
   FilterController controller;
 
@@ -80,7 +83,7 @@ class FilterBottomsheet extends StatelessWidget {
                   top: 15,
                   right: 34,
                 ),
-                child: Row(
+                child: Obx(()=> Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
@@ -97,7 +100,7 @@ class FilterBottomsheet extends StatelessWidget {
                         borderRadius: BorderRadiusStyle.txtRoundedBorder8,
                       ),
                       child: Text(
-                        "lbl_2000_omr".tr,
+                        _currentRangeValues.value.start.round().toString(),
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: AppStyle.txtMontserratMedium14Indigo300.copyWith(
@@ -124,7 +127,7 @@ class FilterBottomsheet extends StatelessWidget {
                         borderRadius: BorderRadiusStyle.txtRoundedBorder8,
                       ),
                       child: Text(
-                        "lbl_2000_omr".tr,
+                        _currentRangeValues.value.end.round().toString(),
                         overflow: TextOverflow.ellipsis,
                         textAlign: TextAlign.left,
                         style: AppStyle.txtMontserratMedium14Indigo300.copyWith(
@@ -135,9 +138,9 @@ class FilterBottomsheet extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
+                ) ),
               ),
-              Padding(
+              Obx(() =>  Padding(
                 padding: getPadding(
                   left: 33,
                   top: 16,
@@ -152,16 +155,21 @@ class FilterBottomsheet extends StatelessWidget {
                     thumbShape: RoundSliderThumbShape(),
                   ),
                   child: RangeSlider(
-                    values: RangeValues(
-                      19.57,
-                      82.26,
-                    ),
+
+                    values:_currentRangeValues.value,
                     min: 0.0,
-                    max: 100.0,
-                    onChanged: (value) {},
+                    max: 1500,
+                    onChanged: (RangeValues values) {
+
+                      _currentRangeValues.value = values;
+
+                    },
+
+
+
                   ),
                 ),
-              ),
+              )),
               Padding(
                 padding: getPadding(
                   left: 33,
@@ -210,25 +218,16 @@ class FilterBottomsheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomButton(
+                        onTap: ()=> showResult() ,
                         height: getVerticalSize(
                           62,
                         ),
-                        text: "msg_show_30_results".tr,
+                        text: "msg_show_results".tr,
                         margin: getMargin(
                           top: 4,
                         ),
                       ),
-                      Padding(
-                        padding: getPadding(
-                          top: 27,
-                        ),
-                        child: Text(
-                          "lbl_reset".tr,
-                          overflow: TextOverflow.ellipsis,
-                          textAlign: TextAlign.left,
-                          style: AppStyle.txtMontserratRegular16Indigo300,
-                        ),
-                      ),
+
                     ],
                   ),
                 ),
@@ -238,5 +237,59 @@ class FilterBottomsheet extends StatelessWidget {
         ),
       ),
     );
+  }
+
+
+  showResult(){
+
+   // Get.toNamed(AppRoutes.searchResultsTwoScreen ,
+   // arguments: {"start": _currentRangeValues.value.start.round().toString() , "end":_currentRangeValues.value.end.round().toString() }
+   // );
+
+   Get.find<SearchResultsTwoController>().fetchHotelsItems(_currentRangeValues.value.start.round().toString() ,_currentRangeValues.value.end.round().toString() , false );
+   Get.back();
+
+
+  }
+}
+
+
+
+class RingSliderPainter extends CustomPainter {
+  final double value;
+
+  RingSliderPainter(this.value);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    Paint paint = Paint()
+      ..color = Colors.blue
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 10;
+
+    Offset center = Offset(size.width / 2, size.height / 2);
+    double radius = size.width / 2;
+
+    canvas.drawCircle(center, radius, paint);
+
+    Paint progressPaint = Paint()
+      ..color = Colors.blue
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 10;
+
+    double angle = (value / 100) * 2 * 3.14;
+
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: radius),
+      -1.57,
+      angle,
+      false,
+      progressPaint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return true;
   }
 }

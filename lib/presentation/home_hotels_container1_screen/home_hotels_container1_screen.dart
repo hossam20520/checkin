@@ -38,12 +38,6 @@ class HomeHotelsContainer1Screen  extends GetWidget<HomeHotelsContainer1Controll
                     textAlign: TextAlign.left,
                     style: AppStyle.txtMontserratSemiBold24)),
             actions: [
-              // AppbarImage(
-              //     height: getSize(20),
-              //     width: getSize(20),
-              //     svgPath: ImageConstant.imgNotification,
-              //     margin: getMargin( top: 18, right: 17)),
-
 
               IconButton(onPressed: ()=> Get.toNamed(AppRoutes.notificationsScreen ),  padding: EdgeInsets.only(right: 15 , left: 10), icon: Icon(Icons.notifications_outlined , size: 40,) , color: ColorConstant.black90003 ,),
               IconButton(onPressed: ()=> openDrawer(), icon: Icon(Icons.menu , size: 40,) , color:ColorConstant.black900Cc , padding: EdgeInsets.only(right: 30 , left: 10),),

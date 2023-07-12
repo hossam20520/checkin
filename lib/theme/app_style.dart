@@ -425,6 +425,9 @@ class AppStyle {
   );
 
 
+
+
+
   static TextStyle txtMontserratRegular16White = TextStyle(
     color: ColorConstant.whiteA700,
     fontSize: getFontSize(
@@ -540,6 +543,15 @@ class AppStyle {
     ),
     fontFamily: 'Montserrat',
     fontWeight: FontWeight.w500,
+  );
+
+  static TextStyle txtHome = TextStyle(
+    color: ColorConstant.whiteA700,
+    fontSize: getFontSize(
+      15,
+    ),
+    fontFamily: 'Montserrat',
+    fontWeight: FontWeight.w300,
   );
 
   static TextStyle txtDescription = TextStyle(

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../bottom_sheet_bottomsheet/bottom_sheet_bottomsheet.dart';
 import '../bottom_sheet_bottomsheet/controller/bottom_sheet_controller.dart';
+import '../search_results_two_screen/controller/search_results_two_controller.dart';
 import 'controller/home_hotels_container_controller.dart';
 import 'models/home_hotels_container_model.dart';
 import 'package:flutter/material.dart';
@@ -59,6 +60,8 @@ class HomeHotelsContainerPage extends StatelessWidget {
                                                         MainAxisAlignment
                                                             .center,
                                                     children: [
+
+
                                                       CustomTextFormField(
                                                           variant:
                                                               TextFormFieldVariant
@@ -105,8 +108,9 @@ class HomeHotelsContainerPage extends StatelessWidget {
                                                                       .center,
                                                               children: [
                                                                 InkWell(
-                                                                    onTap: () =>
-                                                                        openDatePickerDialogCheckin(),
+                                                                    onTap: () =>   print("Aa"),
+
+                                                                        // openDatePickerDialogCheckin(),
                                                                     child:   Container(
                                                                             width: MediaQuery.of(context).size.width * 0.45,
                                                                             margin: getMargin(left: 5),
@@ -270,7 +274,7 @@ class HomeHotelsContainerPage extends StatelessWidget {
 
       Get.toNamed(
         AppRoutes.searchResultsTwoScreen,
-        arguments: controller.nameController.text,
+        arguments: {"search": controller.nameController.text  , "start":"", "end":""},
       );
     }
   }
@@ -288,6 +292,9 @@ class HomeHotelsContainerPage extends StatelessWidget {
       controller.selectedopenDatePickerDialogDate = dateTime;
     }
   }
+
+
+
 
   Rooms() {
     Get.bottomSheet(

@@ -103,7 +103,7 @@ class HomeCarsItemWidget extends StatelessWidget {
                                   () => Text(
                                     homeCarsItemModelObj.price.toString() +
                                         " " +
-                                        "ORM".tr,
+                                        homeCarsItemModelObj.coin.toString(),
                                     overflow: TextOverflow.ellipsis,
                                     style: AppStyle.txtMontserratSemiBold14,
                                   ),

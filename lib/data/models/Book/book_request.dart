@@ -3,6 +3,7 @@ class PostBookReq {
   String? checkin;
   String? checkout;
   String? type;
+  String? payment ;
 
 
 
@@ -10,7 +11,10 @@ class PostBookReq {
     this.roomID,
     this.checkin,
     this.checkout,
-    this.type});
+    this.type,
+    this.payment
+
+  });
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = {};
@@ -25,6 +29,10 @@ class PostBookReq {
     }
     if (this.type != null) {
       data['type'] = this.type;
+    }
+
+    if (this.type != null) {
+      data['payment'] = this.type;
     }
 
 

@@ -13,7 +13,7 @@ class SearchResultsTwoController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    fetchHotelsItems();
+    fetchHotelsItems("" , "" , false);
 
 
 
@@ -24,10 +24,17 @@ class SearchResultsTwoController extends GetxController {
     super.onClose();
   }
 
-        final parama = Get.arguments;
+        final parama = Get.arguments['search'];
 
 
-  Future<void> callGetHotels() async {
+  Future<void> callGetHotels(start , end, highest ) async {
+    String sort = "asc";
+    if(highest){
+      sort = "desc";
+    }
+    // if(parama == "filter"){
+
+
 
      // ? searchResultsTwoModelObj.value.search.value : parama;
     try {
@@ -37,11 +44,13 @@ class SearchResultsTwoController extends GetxController {
             'Content-Type': 'application/json',
           },
           requestData: {
-            'SortField': 'id',
-            'SortType': 'desc',
-            'search': searchResultsTwoModelObj.value.search.value,
-            'limit': 1000,
-            'page':1
+            'SortField': 'price',
+            'SortType': sort,
+             'start': start ,
+             'end':end,
+             'search': searchResultsTwoModelObj.value.search.value,
+             'limit': 1000,
+             'page':1
           }
       );
       _handleCreateLoginSuccess();
@@ -98,10 +107,10 @@ class SearchResultsTwoController extends GetxController {
 
 
 
-  void fetchHotelsItems() async {
+  void fetchHotelsItems(start  , end,  highest ) async {
 
     try {
-      await  callGetHotels( );
+      await  callGetHotels( start , end  , highest);
       // _onLoginSuccess();
     } on HotelsResponse {
       // _onLoginError();

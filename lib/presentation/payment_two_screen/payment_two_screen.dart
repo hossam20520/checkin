@@ -15,7 +15,7 @@ class PaymentTwoScreen extends GetWidget<PaymentTwoController> {
     return  Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-                height: getVerticalSize(40),
+                height: getVerticalSize(60),
                 leadingWidth: 40,
                 leading: IconButton( padding:EdgeInsets.only(left: 10) , iconSize: 40, icon: Icon(Icons.chevron_left), onPressed: () { Get.back();}, ) ,
                 title: AppbarSubtitle(
@@ -247,7 +247,7 @@ class PaymentTwoScreen extends GetWidget<PaymentTwoController> {
                                                       .txtMontserratRegular18)),
                                           Padding(
                                               padding: getPadding(top: 87),
-                                              child:  Obx(()=>  Text(     controller.paymentTwoModelObj.value.price.toString() + " OMR",
+                                              child:  Obx(()=>  Text(     controller.paymentTwoModelObj.value.price.toString()  ,
                                                   overflow:
                                                       TextOverflow.ellipsis,
                                                   textAlign: TextAlign.left,
@@ -299,13 +299,28 @@ class PaymentTwoScreen extends GetWidget<PaymentTwoController> {
 
 
                       isLogged == "yes" ?
+
+
+                          Column(children: [
+
+
                       CustomButton(
 
                           height: getVerticalSize(62),
                           text: "lbl_reserve_now".tr,
                           margin: getMargin(
                               left: 27, top: 48, right: 26, bottom: 5),
-                          onTap: ()=>  controller.pay() ) :
+                          onTap: ()=>  controller.pay("online") ),
+                      CustomButton(
+
+                          height: getVerticalSize(62),
+                          text: "lbl_reserve_nowPay".tr,
+                          margin: getMargin(
+                              left: 27, top: 5, right: 26, bottom: 5),
+                          onTap: ()=>  controller.pay("cash") )
+                          ],)
+
+                          :
 
                       CustomButton(
                           height: getVerticalSize(62),

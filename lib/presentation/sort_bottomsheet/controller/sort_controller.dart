@@ -6,6 +6,8 @@ class SortController extends GetxController {
 
   Rx<bool> isCheckbox = false.obs;
 
+  Rx<bool> highestPrice = false.obs;
+
   @override
   void onReady() {
     super.onReady();

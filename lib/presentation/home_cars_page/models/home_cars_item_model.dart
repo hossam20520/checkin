@@ -11,8 +11,9 @@ class HomeCarsItemModel {
   Rx<String>? image = Rx("");
   Rx<String>? price = Rx("");
   Rx<String>? carType = Rx("");
+  Rx<String>? coin = Rx("");
   HomeCarsItemModel({
-    this.id, this.title, this.image , this.price , this.carType
+    this.id, this.title, this.image , this.price , this.carType , this.coin
 });
 
 }

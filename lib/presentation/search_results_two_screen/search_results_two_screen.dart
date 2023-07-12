@@ -25,23 +25,63 @@ class SearchResultsTwoScreen extends GetWidget<SearchResultsTwoController> {
     //
     //       statusBarColor: ColorConstant.indigo900,
     //     ));
-    final parameter = Get.arguments;
+    final parameter = Get.arguments['search'];
     controller.searchResultsTwoModelObj.value.search.value = parameter;
     return   Scaffold(
             backgroundColor: ColorConstant.whiteA700,
             appBar: CustomAppBar(
-
                 height: getVerticalSize(50),
                 leadingWidth: 20,
                 leading:IconButton(onPressed: ()=> Get.back()  , icon: Icon(Icons.chevron_left , size: 35,),) ,
                 title: AppbarSubtitle1(
                     text: controller.searchResultsTwoModelObj.value.search.value, margin: getMargin(left: 30)),
                 styleType: Style.bgFillIndigo900),
-            body:   Container(
+            body:Container(
                 width: double.maxFinite,
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                         InkWell( onTap: ()=> onTapFilter(),  child: Padding(
+                             padding: getPadding(left: 10, top: 5, right: 10),
+                             child:Container(  width: 100 , height: 50,     child:
+
+                             Row(  children: [
+                               Padding(
+                                   padding: getPadding(left: 10,  right: 10),
+                                   child: CustomImageView(
+                                       svgPath: ImageConstant.imgFilter,
+                                       height: getSize(20),
+                                       width: getSize(20))),
+                               Text("Filter".tr,
+                                   overflow: TextOverflow.ellipsis,
+                                   textAlign: TextAlign.left,
+                                   style: AppStyle.txtMontserratRegular14Bluegray800),
+
+                             ],), )
+                         ),) ,
+
+
+                            InkWell(onTap: ()=> onTapSort() ,   child:  Padding(
+                                padding: getPadding(left: 10, top: 5, right: 10),
+                                child:Container(  width: 100 , height: 50, child:   Row(
+
+
+                                  children: [
+                                    Padding(
+                                        padding: getPadding(left: 10,  right: 10),
+                                        child:Icon(Icons.sort , color: ColorConstant.blueGray800 , ))
+                                    ,
+                                    Text("Sort".tr,
+                                        overflow: TextOverflow.ellipsis,
+                                        textAlign: TextAlign.left,
+                                        style: AppStyle.txtMontserratRegular14Bluegray800),
+
+                                  ],),))),
+                      ],),
 
                       Expanded(
                           child: Padding(
