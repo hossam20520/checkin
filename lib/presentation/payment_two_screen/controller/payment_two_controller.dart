@@ -175,7 +175,7 @@ class PaymentTwoController extends GetxController {
 
     paymentTwoModelObj.value.url.value = bookResponse.url.toString();
 
-
+ Logger.PretteyLogger(bookResponse.url.toString());
 
 
 

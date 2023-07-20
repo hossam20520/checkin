@@ -84,7 +84,9 @@ class HotelController extends GetxController {
 
     hotelModelObj.value.images.value = ImagesHotel!;
     hotelModelObj.value.id.value = hotelResponse.id!;
-
+    hotelModelObj.value.lat.value = hotelResponse.lat!;
+    hotelModelObj.value.long.value = hotelResponse.long!;
+    hotelModelObj.value.rate.value = hotelResponse.rate!;
     if (countryCode == 'ar') {
       hotelModelObj.value.title.value  =  hotelResponse.arName.toString() ;
       hotelModelObj.value.country.value  =  hotelResponse.country!.arName.toString();

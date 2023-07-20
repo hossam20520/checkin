@@ -96,12 +96,13 @@ class RequestsController extends GetxController {
       String checkin = item.checkin.toString();
       String checkout = item.checkout.toString();
       String arName = item.room!.arName.toString();
-      String roomID = item.id.toString();
+      String roomID = item.roomId.toString();
+
       HotelDataModel hotelData = new HotelDataModel(checkin: Rx(checkin) , checkout: Rx(checkout)
           , name: Rx(arName) , id: Rx(roomID));
 
       return RequestsItemModel(
-        type: Rx("hotel"),
+         type: Rx("hotel"),
          bookId: Rx( id.toString()) ,
          paymentModelRq: Rx(paymentDatamodel),
          hotelModelReq: Rx(hotelData) ,
@@ -144,7 +145,7 @@ class RequestsController extends GetxController {
       String checkin = item.pickup.toString();
       String checkout = item.dropoff.toString();
       String arName = item.car!.arName.toString();
-      String carID = item.car!.id.toString();
+      String carID = item.carId.toString();
 
       CarDataModel carData = new CarDataModel(pickup: Rx(checkin) , dropoff: Rx(checkout)
           , name: Rx(arName) , id: Rx(carID));
@@ -193,7 +194,7 @@ class RequestsController extends GetxController {
       String from = item.countryFrom.toString();
       String to = item.countryTo.toString();
 
-      String flightID = item.flightId!.toString();
+      String flightID = item.flightId.toString();
 
       FlightDataModel flightdata = new FlightDataModel(from: Rx(from) , to: Rx(to) , id: Rx(flightID));
 

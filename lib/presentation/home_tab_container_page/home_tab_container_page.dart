@@ -323,7 +323,9 @@ class HomeTabContainerPageHomeTabContainerPage extends StatelessWidget {
                     height: getVerticalSize(
                       627,
                     ),
-                    child:   PageView.builder(
+                    child:
+
+                    PageView.builder(
                       controller: _pageController,
                       scrollDirection: Axis.horizontal,
                       itemCount: 3,

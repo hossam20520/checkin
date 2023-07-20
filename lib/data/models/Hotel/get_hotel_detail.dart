@@ -13,6 +13,9 @@ class HotelResponse{
   List<String>? images;
   String? en_currency;
   String? ar_currency;
+  String? lat;
+  String? long;
+  String? rate;
   // String? images;
 
   HotelResponse({
@@ -27,7 +30,10 @@ class HotelResponse{
     this.country,
    this.images,
     this.en_currency,
-    this.ar_currency
+    this.ar_currency,
+    this.lat,
+    this.long,
+    this.rate,
   });
 
 
@@ -45,7 +51,9 @@ class HotelResponse{
 
     en_currency = json['en_currency'];
     ar_currency = json['ar_currency'];
-
+    lat = json['lat'];
+    long = json['lng'];
+    rate = json['rate'];
 
   }
 

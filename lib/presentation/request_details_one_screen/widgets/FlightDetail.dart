@@ -20,7 +20,9 @@ class FlightItemWedget extends StatelessWidget {
   // var controller = Get.find<SavedController>();
   var controller = Get.find<RequestDetailsOneController>();
   // final id = Get.find<RequestDetailsOneController>().requestDetailsOneModelObj.value.id;
-  final id = Get.find<RequestDetailsOneController>().requestDetailsOneModelObj.value..flightDataModelDetail.value.flightId;
+  final id = Get.find<RequestDetailsOneController>().requestDetailsOneModelObj.value.flightDataModelDetail.value.flightId;
+
+
   @override
   Widget build(BuildContext context) {
     return   Column(

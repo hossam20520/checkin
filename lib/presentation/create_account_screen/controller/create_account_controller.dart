@@ -5,6 +5,8 @@ import 'package:checkin/data/models/register/post_register_resp.dart';
 import 'package:checkin/data/apiClient/api_client.dart';
 
 import '../../../data/models/Country/CountryResp.dart';
+import '../../../data/models/login/post_login_req.dart';
+import '../../log_in_screen/controller/log_in_controller.dart';
 
 class CreateAccountController extends GetxController {
 
@@ -206,6 +208,12 @@ class CreateAccountController extends GetxController {
   }
 
   void _handleCreateRegisterSuccess() {
+    PostLoginReq postLoginReq = PostLoginReq(
+      phone: mobilenumberController.text,
+      password: passwordController.text,
+    );
+   Get.find<LogInController>().LoginCont(postLoginReq);
+
 
   }
 }

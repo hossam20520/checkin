@@ -1,4 +1,7 @@
 final Map<String, String> arSa = {
+  'Show_detail':'اظهار تفاصيل',
+  'lbl_check_outt':'تاريخ العودة',
+  'lbl_check_inn':'تاريخ الذهاب',
   'selcectCountry':'اختر البلد',
   'lbl_reserve_nowPay':'الدغع عند الاستلام',
   'Login_First_To_Reserve':'قم بتسجيل الدخول لتمكين الحجز',
@@ -172,7 +175,7 @@ final Map<String, String> arSa = {
   "msg_2_rooms_2_adults": "2 rooms - 2 adults - 2 children",
   "lbl_economy": "Economy",
   "msg_lorem_ipsum_dolor":
-      " هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي  ",
+      "استكشف ، فلاتر ، توصيات ، مراجعات ، عرض الخريطة ، صور ، خيارات الحجز ، معلومات السلامة ، الرؤى المحلية ، قائمة الرغبات.",
   "lbl_direct": "Direct",
   "lbl_25_05_2023": "25/05/2023",
   "msg_2_swimming_pools": "2 swimming pools",
@@ -258,7 +261,7 @@ final Map<String, String> arSa = {
   "msg_privacy_statement": "Privacy Statement",
   "lbl_hurghada": "Hurghada",
   "msg_select_your_language": "اختر اللغة:",
-  "msg_forgot_password2": "Forgot password ?",
+  "msg_forgot_password2": "هل نسيت كلمة السر ؟",
   "lbl_800_omr": "800 OMR",
   "lbl_fitness_center": "Fitness center",
   "lbl_egypt_eg": "Egypt (EG)",

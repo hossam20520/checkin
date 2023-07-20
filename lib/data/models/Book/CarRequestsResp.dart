@@ -13,15 +13,15 @@
 
 class CarsReqResp {
   int? id;
-  int? providerId;
-  int? clientId;
+  String? providerId;
+  String? clientId;
   String? phone;
-  int? carId;
-  int? totalCost;
+  String? carId;
+  String? totalCost;
   String? pickup;
   String? dropoff;
   String? paymentStatut;
-  int? accept;
+  String? accept;
   String? refundMoney;
 
   Clients? clients;

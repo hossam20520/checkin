@@ -27,6 +27,8 @@ class AuthenticationController extends GetxController with CodeAutoFill {
     Future<void> signInWithOTP() async {
       String verificationId = Get.find<ForgotPasswordController>().forgotPasswordModelObj.value.verificationId.toString();
       String code = Get.find<ForgotPasswordController>().forgotPasswordModelObj.value.code.toString();
+
+      // ForgotPasswordController
       try {
         final credential = PhoneAuthProvider.credential(
           verificationId: verificationId,

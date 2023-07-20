@@ -37,6 +37,36 @@ class LogInController extends GetxController {
 
 
 
+  Future<void> LoginCont(postLoginReq) async {
+
+
+      try {
+        await callCreateLogin(
+          postLoginReq.toJson(),
+        );
+        _onLoginSuccessv();
+      } on PostLoginResp {
+        // _onLoginError();
+      } on NoInternetException catch (e) {
+        Get.rawSnackbar(message: e.toString());
+      } catch (e) {
+        print("0000000000000000000000000000000000000");
+        // _onLoginSuccess();
+        print(e);
+        //TODO: Handle generic errors
+      }
+
+  }
+
+
+  void _onLoginSuccessv() {
+
+    Get.offAllNamed(AppRoutes.homeHotelsContainer1Screen);
+
+  }
+
+
+
   Future<void> callCreateLogin(Map req) async {
     try {
       postLoginResp = await Get.find<ApiClient>().createLogin(

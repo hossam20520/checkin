@@ -35,31 +35,47 @@ class SavedPage extends StatelessWidget {
             top: 14,
             right: 8,
           ),
-          child: Obx(
-            () => ListView.separated(
-              physics: BouncingScrollPhysics(),
-              shrinkWrap: true,
-              separatorBuilder: (
-                context,
-                index,
-              ) {
-                return SizedBox(
-                  height: getVerticalSize(
-                    16,
-                  ),
-                );
-              },
-              itemCount:
-                  controller.savedModelObj.value.savedItemList.value.length,
-              itemBuilder: (context, index) {
-                HotelsItemModel model =
-                    controller.savedModelObj.value.savedItemList.value[index];
-                return SavedItemWidget(
-                  model,
-                );
-              },
-            ),
-          ),
+          child:FutureBuilder<void>(
+              future: controller.fetchHotelsItems(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState ==
+                    ConnectionState.done) {
+                  // Widget tree when data fetching is complete
+                  return Obx(
+                        () => ListView.separated(
+                      physics: BouncingScrollPhysics(),
+                      shrinkWrap: true,
+                      separatorBuilder: (
+                          context,
+                          index,
+                          ) {
+                        return SizedBox(
+                          height: getVerticalSize(
+                            16,
+                          ),
+                        );
+                      },
+                      itemCount:
+                      controller.savedModelObj.value.savedItemList.value.length,
+                      itemBuilder: (context, index) {
+                        HotelsItemModel model =
+                        controller.savedModelObj.value.savedItemList.value[index];
+                        return SavedItemWidget(
+                          model,
+                        );
+                      },
+                    ),
+                  ) ;
+                } else {
+                  // Widget tree while data is being fetched
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              })
+
+
+
         ) :
 
         SkipWidget()

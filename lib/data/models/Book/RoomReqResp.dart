@@ -20,19 +20,19 @@ import 'package:checkin/data/models/Book/CarRequestsResp.dart';
 
 class RoomRequestResp {
   int? id;
-  int? providerId;
+  String? providerId;
   String? sessionId;
-  int? clientId;
+  String? clientId;
   String? phone;
-  int? roomId;
+  String? roomId;
   String? numberRooms;
   String? arName;
   String? enName;
-  int? totalCost;
+  String? totalCost;
   String? checkin;
   String? checkout;
   String? paymentStatut;
-  int? accept;
+  String? accept;
 
   String? createdAt;
   String? updatedAt;

@@ -48,6 +48,46 @@ class ApiClient extends GetConnect {
   }
 
 
+
+
+  Future<PostPasswordResp> ResetPassword({
+    Map<String, String> headers = const {},
+    Map requestData = const {},
+  }) async {
+    ProgressDialogUtils.showProgressDialog();
+    try {
+      await isNetworkConnected();
+      Response response = await httpClient.post(
+        '$url/api/device/auth/passowrd/reset/user',
+        headers: headers,
+        body: requestData,
+      );
+
+
+      ProgressDialogUtils.hideProgressDialog();
+      if (_isSuccessCall(response)) {
+
+        return PostPasswordResp.fromJson(response.body);
+      } else {
+
+
+        throw response.body != null
+
+            ? PostPasswordResp.fromJson(response.body)
+            : 'Something Went Wrong!';
+      }
+    } catch (error, stackTrace) {
+      ProgressDialogUtils.hideProgressDialog();
+      Logger.log(
+        error,
+        stackTrace: stackTrace,
+      );
+      rethrow;
+    }
+  }
+
+
+
   Future<PostPasswordResp> ChangePassword({
     Map<String, String> headers = const {},
     Map requestData = const {},
@@ -376,7 +416,7 @@ class ApiClient extends GetConnect {
         '$url/api/device/fav$queryParams',
         headers: headers,
       );
-
+      Logger.PretteyLogger(response.body);
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
         return PostPasswordResp.fromJson(response.body);
@@ -535,6 +575,8 @@ class ApiClient extends GetConnect {
         '$url/api/device/saved',
         headers: headers,
       );
+
+      Logger.PretteyLogger(response.body);
 
       ProgressDialogUtils.hideProgressDialog();
       if (_isSuccessCall(response)) {
@@ -877,6 +919,7 @@ class ApiClient extends GetConnect {
       );
 
       ProgressDialogUtils.hideProgressDialog();
+      Logger.PretteyLogger(response.body);
       if (_isSuccessCall(response)) {
         return BookResponse.fromJson(response.body);
       } else {

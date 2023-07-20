@@ -1,4 +1,7 @@
 final Map<String, String> enUs = {
+  'Show_detail':'Show Detail',
+  'lbl_check_outt':'Check Out',
+  'lbl_check_inn':'Check In',
   'Settins':'Settings',
   'msg_show_results':'Show Results',
   'selcectCountry':'Select Country',
@@ -176,8 +179,7 @@ final Map<String, String> enUs = {
   "msg_62_813_8172_5977": "+62 813-8172-5977",
   "msg_2_rooms_2_adults": "2 rooms - 2 adults - 2 children",
   "lbl_economy": "Economy",
-  "msg_lorem_ipsum_dolor":
-      "Lorem ipsum dolor sit amet consectetur. Eget amet sagittis adipiscing viverra faucibus.",
+  "msg_lorem_ipsum_dolor": "Explore, filters, recommendations, reviews, map view, photos, booking options, safety information, local insights, wishlist.",
   "lbl_direct": "Direct",
   "lbl_25_05_2023": "25/05/2023",
   "msg_2_swimming_pools": "2 swimming pools",

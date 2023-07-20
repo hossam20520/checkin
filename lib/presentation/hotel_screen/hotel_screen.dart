@@ -253,10 +253,10 @@ class HotelScreen extends GetWidget<HotelController> {
                                                       style: AppStyle
                                                           .txtMontserratLight1515))),
                                               Spacer(),
-                                              CustomButton(
+                                              Obx(()=> CustomButton(
                                                   height: getVerticalSize(24),
                                                   width: getHorizontalSize(64),
-                                                  text: "lbl_4_5".tr,
+                                                  text:  controller.hotelModelObj.value.rate.toString(),
                                                   variant: ButtonVariant
                                                       .FillIndigo700,
                                                   shape: ButtonShape
@@ -270,7 +270,7 @@ class HotelScreen extends GetWidget<HotelController> {
                                                           getMargin(right: 6),
                                                       child: CustomImageView(
                                                           svgPath: ImageConstant
-                                                              .imgStar)))
+                                                              .imgStar))))
                                             ])),
                                         Padding(
                                             padding: getPadding(top: 32),
@@ -335,7 +335,7 @@ class HotelScreen extends GetWidget<HotelController> {
   }
 
   onTapImgMapofbirmingham() {
-    openGoogleMaps(37.7749, -122.4194);
+    openGoogleMaps(  double.parse('${controller.hotelModelObj.value.lat.value.toString() }'), double.parse('${controller.hotelModelObj.value.long.value.toString() }'));
     // Get.toNamed(
     //   AppRoutes.hotelLocationScreen,
     // );

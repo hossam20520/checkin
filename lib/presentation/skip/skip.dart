@@ -35,6 +35,7 @@ class SkipWidget extends StatelessWidget {
                 margin: getMargin(
                     left: 27, top: 48, right: 26, bottom: 37),
                 onTap: () {
+
                   Get.toNamed(AppRoutes.logInScreen);
                 })
           ],)),);

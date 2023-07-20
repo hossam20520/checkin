@@ -29,6 +29,7 @@ changeResponse changeresp = changeResponse();
 
   @override
   void onReady() {
+
     super.onReady();
      String type = Get.arguments['type'];
     final obj = Get.find<RequestsController>().requestsModelObj.value.requestsItemList.value[Get.arguments['index']];
@@ -53,6 +54,10 @@ changeResponse changeresp = changeResponse();
       String checkIn  = obj.hotelModelReq!.value.checkin.toString();
       String checkout  = obj.hotelModelReq!.value.checkout.toString();
       String roomId  = obj.hotelModelReq!.value.id.toString();
+
+
+
+
 
       requestDetailsOneModelObj.value.roomDataModel.value = new RoomDataModel(
           name: Rx(roomName) ,

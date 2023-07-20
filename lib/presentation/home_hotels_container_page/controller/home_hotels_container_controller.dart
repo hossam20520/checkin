@@ -74,7 +74,7 @@ class HomeHotelsContainerController extends GetxController {
             'SortField': 'id',
             'SortType': 'desc',
             'search': '',
-            'limit': 5,
+            'limit': 8,
             'page':1
           }
       );
@@ -97,9 +97,9 @@ class HomeHotelsContainerController extends GetxController {
       String title = "";
       String country = "";
       String coin = "";
+      String rate = hotel.rate.toString();
 
       if(language == "ar"){
-
         title = hotel.arName.toString();
         country = hotel.country!.arName.toString();
         coin = hotel.ar_currency.toString();
@@ -112,6 +112,7 @@ class HomeHotelsContainerController extends GetxController {
       }
 
       return HotelsItemModel(
+        rate: Rx(rate),
         image: Rx(imageUrl),
         title: Rx(title),
         id: Rx(id),

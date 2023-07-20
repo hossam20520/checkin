@@ -13,7 +13,7 @@ class NotificationResp {
 
 class Noti {
   int? id;
-  int? clientId;
+  String? clientId;
   String? title;
   String? message;
   String? read;

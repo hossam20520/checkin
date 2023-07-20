@@ -8,6 +8,9 @@ class HotelModel {
   Rx<String>  title = Rx("");
   Rx<double>  price = Rx(0);
   Rx<String> country = Rx("");
+  Rx<String> lat = Rx("");
+  Rx<String> long = Rx("");
+  Rx<String> rate = Rx("");
   Rx<String> decsription = Rx("");
   Rx<List<String>> images = Rx([]);
 

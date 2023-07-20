@@ -18,7 +18,7 @@ class SavedController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    fetchHotelsItems();
+    // fetchHotelsItems();
 
 
 
@@ -113,7 +113,8 @@ class SavedController extends GetxController {
 
 
 
-  void fetchHotelsItems() async {
+
+   fetchHotelsItems() async {
 
     try {
       await  callGetHotels( );

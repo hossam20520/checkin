@@ -104,12 +104,13 @@ class AuthenticationScreen extends GetWidget<AuthenticationController> {
                             controller.signInWithOTP();
                             // onTapContinue();
                           }),
-                      Padding(
-                          padding: getPadding(top: 34, bottom: 19),
-                          child: Text("lbl_resend_the_code".tr,
-                              overflow: TextOverflow.ellipsis,
-                              textAlign: TextAlign.left,
-                              style: AppStyle.txtMontserratLight16))
+                      SizedBox(height: 130,)
+                      // Padding(
+                      //     padding: getPadding(top: 34, bottom: 19),
+                      //     child: Text("lbl_resend_the_code".tr,
+                      //         overflow: TextOverflow.ellipsis,
+                      //         textAlign: TextAlign.left,
+                      //         style: AppStyle.txtMontserratLight16))
                     ])) );
   }
 

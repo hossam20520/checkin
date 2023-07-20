@@ -149,9 +149,8 @@ class ResetPasswordScreen extends GetWidget<ResetPasswordController> {
   }
 
   onTapConfirm() {
-    Get.toNamed(
-      AppRoutes.successTwoScreen,
-    );
+    controller.ResetPassowrd();
+
   }
 
   onTapArrowleft6() {

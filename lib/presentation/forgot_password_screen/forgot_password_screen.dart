@@ -1,6 +1,8 @@
+import 'package:country_code_picker/country_code_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../core/utils/validation_functions.dart';
+import '../../widgets/custom_drop_down.dart';
 import '../../widgets/custom_text_form_field.dart';
 import 'controller/forgot_password_controller.dart';
 import 'package:checkin/core/app_export.dart';
@@ -41,27 +43,60 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
                           textAlign: TextAlign.left,
                           style: AppStyle.txtMontserratSemiBold24),
 
-                      CustomTextFormField(
-                          focusNode: FocusNode(),
-                          controller: controller.mobilenumberController,
-                          hintText: "Example +20********** ".tr,
-                          margin: getMargin(top: 24),
-                          fontStyle:
-                          TextFormFieldFontStyle.MontserratLight18,
-                          textInputType: TextInputType.phone,
-                          prefix: Container(
-                              margin: getMargin(
-                                  left: 29, top: 17, right: 14, bottom: 17),
-                              child: CustomImageView(
-                                  svgPath: ImageConstant.imgCall)),
-                          prefixConstraints: BoxConstraints(
-                              maxHeight: getVerticalSize(54)),
-                          validator: (value) {
-                            if (!isValidPhone(value)) {
-                              return "Please enter valid phone number";
-                            }
-                            return null;
-                          }),
+
+
+                      Row(
+                        children: [
+                          Padding(
+                            padding: getPadding(
+
+                                top: 10),
+                            child: Center(
+                            child: CountryCodePicker(
+                              onChanged: controller.onCountryChange,
+                              // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
+                              initialSelection: 'OM',
+                              favorite: ['+968','OMAN'],
+                              // optional. Shows only country name and flag
+                              showCountryOnly: false,
+                              // optional. Shows only country name and flag when popup is closed.
+                              showOnlyCountryWhenClosed: false,
+                              // optional. aligns the flag and the Text left
+                              alignLeft: false,
+                            ),
+                          )),
+                        Expanded(child:  CustomTextFormField(
+
+                            focusNode: FocusNode(),
+                            controller: controller.mobilenumberController,
+                            hintText: "Phone".tr,
+                            margin: getMargin(top: 24),
+                            fontStyle:
+                            TextFormFieldFontStyle.MontserratLight18,
+                            textInputType: TextInputType.phone,
+                            prefix: Container(
+                                margin: getMargin(
+                                    left: 29, top: 17, right: 14, bottom: 17),
+                                child: CustomImageView(
+                                    svgPath: ImageConstant.imgCall)),
+                            prefixConstraints: BoxConstraints(
+                                maxHeight: getVerticalSize(54)),
+                            validator: (value) {
+                              if (!isValidPhone(value)) {
+                                return "Please enter valid phone number";
+                              }
+                              return null;
+                            }) )   ,
+
+
+
+
+
+                        ],
+                      ),
+
+
+
 
                       // Container(
                       //     width: getHorizontalSize(227),
@@ -110,7 +145,6 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
     //     codeSent: null,
     //     codeAutoRetrievalTimeout: null
     // );
-    Logger.PretteyLogger("aaaa");
 
     Get.toNamed(
       AppRoutes.authenticationScreen,

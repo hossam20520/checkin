@@ -392,7 +392,7 @@ class CreateAccountScreen extends GetWidget<CreateAccountController> {
                                     onTapTxtHaveanaccount();
                                   },
                                   child: Padding(
-                                      padding: getPadding(top: 35, bottom: 5),
+                                      padding: getPadding(top: 5, bottom: 15),
                                       child: RichText(
                                           text: TextSpan(children: [
                                             TextSpan(
@@ -455,17 +455,7 @@ class CreateAccountScreen extends GetWidget<CreateAccountController> {
 
   void _onRegisterSuccess() {
 
-    Get.rawSnackbar(message: "SuccessCreated".tr ,
-      snackPosition:SnackPosition.TOP  ,
-      backgroundColor: Colors.green  ,
-      margin: EdgeInsets.all(20.0),
-      borderRadius: 10,
-      animationDuration: Duration(seconds: 1),
-      icon: Icon(Icons.error , color: ColorConstant.whiteA700,));
-
-    Get.toNamed(
-      AppRoutes.logInScreen,
-    );
+// ss
 
 
   }
@@ -491,11 +481,15 @@ class CreateAccountScreen extends GetWidget<CreateAccountController> {
   }
 
   onTapTxtHaveanaccount() async {
-    await FacebookAuthHelper().facebookSignInProcess().then((facebookUser) {
-      onSuccessFacebookAuthResponse(facebookUser);
-    }).catchError((onError) {
-      onErrorFacebookAuthResponse();
-    });
+
+    Get.toNamed(
+      AppRoutes.logInScreen,
+    );
+    // await FacebookAuthHelper().facebookSignInProcess().then((facebookUser) {
+    //   onSuccessFacebookAuthResponse(facebookUser);
+    // }).catchError((onError) {
+    //   onErrorFacebookAuthResponse();
+    // });
   }
 
   onSuccessFacebookAuthResponse(FacebookUser facebookUser) {

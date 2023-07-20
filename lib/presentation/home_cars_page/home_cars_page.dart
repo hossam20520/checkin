@@ -493,7 +493,7 @@ class HomeCarsPage extends StatelessWidget {
                                       child: CircularProgressIndicator(),
                                     );
                                   }
-                                })),
+                                }) ),
                       ),
                       SizedBox(
                         height: 10,

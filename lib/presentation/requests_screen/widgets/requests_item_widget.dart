@@ -45,7 +45,7 @@ class RequestsItemWidget extends StatelessWidget {
                   style: AppStyle.txtMontserratSemiBold1493,
                 ),
                 Text(
-                    "25-10-2023",
+                    "",
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.left,
                   style: AppStyle.txtMontserratLight14,
@@ -100,7 +100,7 @@ class RequestsItemWidget extends StatelessWidget {
                     ),
                     child: Text(
 
-                      requestsItemModelObj.paymentModelRq!.value.totalPrice.toString()+ " OMR",
+                      requestsItemModelObj.paymentModelRq!.value.totalPrice.toString() ,
                       overflow: TextOverflow.ellipsis,
                       textAlign: TextAlign.left,
                       style: AppStyle.txtMontserratSemiBold14Indigo700,
